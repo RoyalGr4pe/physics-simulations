@@ -1,4 +1,9 @@
 const jointConstructor = {
+    applyImpX: applyImpulseX,
+    applyImpY: applyImpulseY,
+    updateAcc: updateAcceleration,
+    updateVel: updateVelocity,
+    updatePos: updatePosition,
     collisionHandler: handleCollisions,
     update: jointUpdater,
     render: jointRenderer
@@ -7,7 +12,6 @@ const jointConstructor = {
 
 function collidedWithBottomOfWindow(y, radius, boundaryBottom) {
     if (y - radius <= boundaryBottom) {
-        console.log("Bottom");
         return true;
     }
 }
@@ -15,7 +19,6 @@ function collidedWithBottomOfWindow(y, radius, boundaryBottom) {
 
 function collidedWithTopOfWindow(y, radius, boundaryTop) {
     if (y + radius >= boundaryTop) {
-        console.log("Top");
         return true;
     }
 }
@@ -23,7 +26,6 @@ function collidedWithTopOfWindow(y, radius, boundaryTop) {
 
 function collidedWithLeftOfWindow(x, radius, boundaryLeft) {
     if (x - radius <= boundaryLeft) {
-        console.log("left");
         return true;
     }
 }
@@ -31,30 +33,63 @@ function collidedWithLeftOfWindow(x, radius, boundaryLeft) {
 
 function collidedWithRightOfWindow(x, radius, boundaryRight) {
     if (x + radius >= boundaryRight) {
-        console.log("Right");
         return true;
     }
 }
 
 
+function applyImpulseX() {
+    this.velocity[0] = -this.velocity[0] - ((this.force[0] * deltaTime)/this.mass);
+}
+
+
+function applyImpulseY() {
+    this.velocity[1] = -this.velocity[1] - ((this.force[1] * deltaTime)/this.mass);
+}
+
+
 function handleCollisions(boundaryLeft, boundaryRight, boundaryBottom, boundaryTop) {
     if (collidedWithLeftOfWindow(this.pos[0], this.radius, boundaryLeft)) {
-        this.pos[0] = boundaryLeft + this.radius;
+        this.applyImpX();
     } 
     else if (collidedWithRightOfWindow(this.pos[0], this.radius, boundaryRight)) {
-        this.pos[0] = boundaryRight - this.radius;
+        this.applyImpX();
     } 
     else if (collidedWithBottomOfWindow(this.pos[1], this.radius, boundaryBottom)) {
-        this.pos[1] = boundaryBottom + this.radius;
+        this.applyImpY();
     } 
     else if (collidedWithTopOfWindow(this.pos[1], this.radius, boundaryTop)) {
-        this.pos[1] = boundaryTop - this.radius;
+        this.applyImpY();
     }
 }
 
 
-function jointUpdater(windowWidth, windowHeight) {
-    this.pos[1] += g;
+function updateAcceleration() {
+    this.acceleration[0] = this.force[0] / this.mass;
+    this.acceleration[1] = this.force[1] / this.mass;
+}
+
+
+function updateVelocity() {
+    this.velocity[0] += this.acceleration[0] * deltaTime;
+    this.velocity[1] += this.acceleration[1] * deltaTime;
+}
+
+
+function updatePosition() {
+    this.pos[0] += (this.velocity[0] * deltaTime) + (0.5 * this.acceleration[0] * deltaTime);
+    this.pos[1] += (this.velocity[1] * deltaTime) + (0.5 * this.acceleration[1] * deltaTime);
+}
+
+
+function jointUpdater(windowWidth, windowHeight, deltaTime) {
+    let fg = this.mass * g * deltaTime;
+    this.force[0] = fg;
+    this.force[1] = fg;
+
+    this.updateAcc();
+    this.updateVel();
+    this.updatePos();
     this.collisionHandler(0, windowWidth, 0, windowHeight);
 }
 

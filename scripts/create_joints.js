@@ -25,8 +25,12 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
             let joint = Object.create(jointConstructor)
             
             joint.pos = [x, y];
+            joint.velocity = [0, 0];
+            joint.acceleration = [0, 0];
+            joint.force = [0, 0];
             joint.radius = jointsRadius;
-            joint.id = jointID
+            joint.mass = jointsMass;
+            joint.id = jointID;
 
             jointID++;
             joints.push(joint); 
@@ -34,7 +38,7 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
         }
         y += springRestingLength;
         x = temp_x;
-        jointsArray.push(joints)
+        jointsArray.push(joints);
     }
     return jointsArray;
 } 
