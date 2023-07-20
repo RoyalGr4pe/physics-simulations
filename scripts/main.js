@@ -1,9 +1,17 @@
 let jointsGrid = createJoints(4)
-console.log(jointsGrid)
+
+function updateJoints() {
+  for (joints of jointsGrid) {
+    for (joint of joints) {
+      joint.update()
+    }
+  }
+}
+
 function renderJoints() {
   for (joints of jointsGrid) {
     for (joint of joints) {
-      joint.render(joint.pos[0], joint.pos[1], joint.radius)
+      joint.render()
     }
   }
 }
@@ -14,6 +22,8 @@ function setup() {
 
 function draw(){
   background(backgroundRed, backgroundGreen, backgroundBlue)
-  translate(-width/2, -height/2, 0)
+  translate(-screenWidth/2, screenHeight/2, 0)
+  scale(1, -1); // Invert the Y-axis
+  updateJoints()
   renderJoints()
 }
