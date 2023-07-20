@@ -3,9 +3,3 @@ body {
   padding: 0;
   height: 100%;
 }
-
-#glcanvas {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
