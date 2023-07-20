@@ -13,10 +13,10 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
 
     let jointsArray = [];
 
-    let x = windowWidth/2;
-    let y = windowHeight/2;
-    let temp_x = x;
     let springRestingLength = 50;
+    let x = windowWidth / 2 - (columns - 1) * springRestingLength / 2;
+    let y = windowHeight / 2 - (rows - 1) * springRestingLength / 2;
+    let temp_x = x;
     
     let jointID = 1
     for (let i = 1; i <= rows; i++) {
@@ -37,4 +37,4 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
         jointsArray.push(joints)
     }
     return jointsArray;
-  } 
+} 

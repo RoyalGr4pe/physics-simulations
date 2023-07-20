@@ -2,7 +2,7 @@ let jointsGrid;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-  jointsGrid = createJoints(4, windowWidth, windowHeight)
+  jointsGrid = createJoints(16, windowWidth, windowHeight)
 }
 
 function draw(){
