@@ -5,7 +5,7 @@ const jointConstructor = {
 }
 
 
-function collidedWithBottomOfWindow(y, radius) {
+function collidedWithBottomOfWindow(y, radius, boundaryBottom) {
     if (y - radius <= boundaryBottom) {
         console.log("Bottom");
         return true;
@@ -13,7 +13,7 @@ function collidedWithBottomOfWindow(y, radius) {
 }
 
 
-function collidedWithTopOfWindow(y, radius) {
+function collidedWithTopOfWindow(y, radius, boundaryTop) {
     if (y + radius >= boundaryTop) {
         console.log("Top");
         return true;
@@ -21,7 +21,7 @@ function collidedWithTopOfWindow(y, radius) {
 }
 
 
-function collidedWithLeftOfWindow(x, radius) {
+function collidedWithLeftOfWindow(x, radius, boundaryLeft) {
     if (x - radius <= boundaryLeft) {
         console.log("left");
         return true;
@@ -29,7 +29,7 @@ function collidedWithLeftOfWindow(x, radius) {
 }
 
 
-function collidedWithRightOfWindow(x, radius) {
+function collidedWithRightOfWindow(x, radius, boundaryRight) {
     if (x + radius >= boundaryRight) {
         console.log("Right");
         return true;
@@ -37,35 +37,35 @@ function collidedWithRightOfWindow(x, radius) {
 }
 
 
-function handleCollisions() {
-    if (collidedWithLeftOfWindow(this.pos[0], this.radius)) {
+function handleCollisions(boundaryLeft, boundaryRight, boundaryBottom, boundaryTop) {
+    if (collidedWithLeftOfWindow(this.pos[0], this.radius, boundaryLeft)) {
         this.pos[0] = boundaryLeft + this.radius;
     } 
-    else if (collidedWithRightOfWindow(this.pos[0], this.radius)) {
+    else if (collidedWithRightOfWindow(this.pos[0], this.radius, boundaryRight)) {
         this.pos[0] = boundaryRight - this.radius;
     } 
-    else if (collidedWithBottomOfWindow(this.pos[1], this.radius)) {
+    else if (collidedWithBottomOfWindow(this.pos[1], this.radius, boundaryBottom)) {
         this.pos[1] = boundaryBottom + this.radius;
     } 
-    else if (collidedWithTopOfWindow(this.pos[1], this.radius)) {
+    else if (collidedWithTopOfWindow(this.pos[1], this.radius, boundaryTop)) {
         this.pos[1] = boundaryTop - this.radius;
     }
 }
 
 
-function jointUpdater() {
+function jointUpdater(windowWidth, windowHeight) {
     this.pos[1] += g;
-    this.collisionHandler();
+    this.collisionHandler(0, windowWidth, 0, windowHeight);
 }
 
 
 function jointRenderer() {
-    stroke(255, 0, 0);
+    noStroke();
     fill(255, 0, 0);
     ellipse(
         this.pos[0], 
         this.pos[1], 
-        this.radius, 
-        this.radius
+        this.radius * 2, 
+        this.radius * 2
     );
 }

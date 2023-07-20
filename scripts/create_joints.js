@@ -1,4 +1,4 @@
-function createJoints(numberOfJoints) {
+function createJoints(numberOfJoints, windowWidth, windowHeight) {
     /*
     The number of rows and columns should be as close to each other as possible
     Such that rows * columns = numJoints
@@ -13,8 +13,8 @@ function createJoints(numberOfJoints) {
 
     let jointsArray = [];
 
-    let x = screenWidth/2;
-    let y = screenHeight/2;
+    let x = windowWidth/2;
+    let y = windowHeight/2;
     let temp_x = x;
     let springRestingLength = 50;
     
