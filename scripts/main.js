@@ -8,15 +8,16 @@ function setup() {
 }
 
 function draw(){
-  deltaTime = (window.performance.now() - canvas._pInst._lastFrameTime)/100;
+  deltaTime = speed * (window.performance.now() - canvas._pInst._lastFrameTime)/100;
 
-  background(backgroundRed, backgroundGreen, backgroundBlue)
+  background(backgroundRed, backgroundGreen, backgroundBlue);
   frameRate(fps);
-  translate(-windowWidth/2, windowHeight/2, 0)
+  translate(-windowWidth/2, windowHeight/2, 0);
   scale(1, -1); // Invert the Y-axis
   
-  updateJoints()
-  renderJoints()
+  updateJoints();
+  jointCollisionHandler(jointsGrid);
+  renderJoints();
 }
 
 function windowResized() {
