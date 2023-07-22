@@ -5,13 +5,13 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
     If rows and columns can't be equal then rows should be larger then columns
     */
     
-    let columns = Math.sqrt(numberOfJoints);
+    let columns = round(Math.sqrt(numberOfJoints));
     while (numberOfJoints % columns != 0) {
         columns--;
     }
     let rows = numberOfJoints / columns;
 
-    let jointsArray = [];
+    let jointsGrid = [];
 
     let x = windowWidth / 2 - (columns - 1) * springRestingLength / 2;
     let y = windowHeight / 2 - (rows - 1) * springRestingLength / 2;
@@ -37,7 +37,7 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
         }
         y += springRestingLength;
         x = temp_x;
-        jointsArray.push(joints);
+        jointsGrid.push(joints);
     }
-    return jointsArray;
+    return jointsGrid;
 } 

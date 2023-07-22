@@ -48,23 +48,24 @@ function createSprings(jointsGrid) {
                     if (offset[0] == 0 || offset[1] == 0) {
                         tempLength = springRestingLength;
                     } else {
-                        tempLength = sqrt(2.0 * tempLength * tempLength);
+                            tempLength = sqrt(2.0 * tempLength**2);
                     }
                     
+                    
                     let spring = new Spring(
-                        springID,
-                        springConstant,
-                        tempLength,
-                        [jointsGrid[i][j], jointsGrid[row][col]],
-                        [jointsGrid[i][j].getPosition(), jointsGrid[row][col].getPosition()],
-                        [jointsGrid[i][j].getID(), jointsGrid[row][col].getID()]
-                    )
-
-                    jointsGrid[i][j].setSpring(spring);
-                    jointsGrid[row][col].setSpring(spring);
+                       springID,
+                       springConstant,
+                       tempLength,
+                       [jointsGrid[i][j], jointsGrid[row][col]],
+                       [jointsGrid[i][j].getPosition(), jointsGrid[row][col].getPosition()],
+                       [jointsGrid[i][j].getID(), jointsGrid[row][col].getID()]
+                       )
+                       
+                       jointsGrid[i][j].setSpring(spring);
+                       jointsGrid[row][col].setSpring(spring);
 
                     springs.push(spring);
-                    springID++;
+                    springID++; 
                 }
             }
 

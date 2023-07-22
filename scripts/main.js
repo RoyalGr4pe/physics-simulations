@@ -5,7 +5,7 @@ let deltaTime;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-  jointsGrid = createJoints(numJoints, windowWidth, windowHeight);
+  jointsGrid = createJoints(numberOfJoints, windowWidth, windowHeight);
   springs = createSprings(jointsGrid);
 }
 
@@ -32,6 +32,7 @@ function updateJointsAndSprings() {
       joint.update(windowWidth, windowHeight, deltaTime);
     }
   }
+  // Update all the springs
   for (spring of springs) {
     spring.update();
   }

@@ -5,7 +5,7 @@ class Spring {
         this.length = length;
         this.joints = joints;
         this.position = position;
-        this.force = [0, 0];
+        this.springForce = [0, 0];
         this.jointIDs = jointIDs;
     }
 
@@ -15,13 +15,15 @@ class Spring {
 
 
     update() {
-
+        this.springForce = this.calculateSpringForce();
+        this.joints[0].updateSpringForce([-this.springForce[0], -this.springForce[1]]);
+        this.joints[1].updateSpringForce(this.springForce);
     }
 
 
     render() {
         stroke(255, 255, 255)
-        strokeWeight(4)
+        strokeWeight(springWidth)
         line(this.joints[0].getPosition()[0], this.joints[0].getPosition()[1], this.joints[1].getPosition()[0], this.joints[1].getPosition()[1])     
     }
 
@@ -32,26 +34,36 @@ class Spring {
 
 
     calculateDeltaX() {
-        this.joint1_pos = joints[0].getPosition();
-        this.joint2_pos = joints[1].getPosition();
-        return this.joint2_pos[0] - this.joint1_pos[0];
+        let joint1_pos = this.joints[0].getPosition();
+        let joint2_pos = this.joints[1].getPosition();
+        return joint2_pos[0] - joint1_pos[0];
     }
 
 
     calculateDeltaY() {
-        this.joint1_pos = joints[0].getPosition();
-        this.joint2_pos = joints[1].getPosition();
-        return this.joint2_pos[1] - this.joint1_pos[1];
+        let joint1_pos = this.joints[0].getPosition();
+        let joint2_pos = this.joints[1].getPosition();
+        return joint2_pos[1] - joint1_pos[1];
     }
 
 
     calculateSpringForce() {
         let dx = this.calculateDeltaX();
         let dy = this.calculateDeltaY();
-        console.log(dx);
-        let extension = Math.sqrt(dx**2 + dy**2);
-        let force = [-this.k * dx/extension, -this.k * dy/extension]; 
-        return [-this.k * dx/extension, -this.k * dy/extension]; 
+        let extension = Math.sqrt(dx**2 + dy**2) - this.length;
+
+        let springForceMagnitude = -this.k * extension;
+
+        let theta = Math.atan2(dy, dx);
+        let springForceX = springForceMagnitude * Math.cos(theta);
+        let springForceY = springForceMagnitude * Math.sin(theta);
+
+        return [springForceX, springForceY];
+    }
+
+
+    applySpringForce() {
+        this.joints[0]
     }
 
 

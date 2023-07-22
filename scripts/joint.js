@@ -8,7 +8,7 @@ class Joint {
         this.acceleration = acceleration;
         this.forceDueToGravity = 0;
         this.resultantForce = [0, 0];
-        this.reactionForce = [0, 0]
+        this.reactionForce = [0, 0];
         this.springForce = [0, 0];
         this.springs = [];
     }
@@ -25,6 +25,7 @@ class Joint {
         this.updateVelocity(deltaTime);
         this.updatePosition(deltaTime);
         this.boundaryCollisionHandler(0, windowWidth, 0, windowHeight);
+        this.springForce = [0, 0]
     }
     
     
@@ -45,15 +46,16 @@ class Joint {
     /*-------------------------------------------------------------------*/
 
 
+    updateSpringForce(force) {
+        this.springForce[0] += force[0];
+        this.springForce[1] += force[1];
+
+    }
+
+
     updateForce() {
-        //this.springForce = [0, 0]
-        //for (spring of springs) {
-            //console.log(spring.calculateSpringForce());
-            //this.springForce = add_array(this.springForce, spring.calculateSpringForce());
-        //}
-        //console.log(this.springForce)
-        this.resultantForce[0] = this.forceDueToGravity + this.reactionForce[0]; //+ this.springForce[0];
-        this.resultantForce[1] = this.forceDueToGravity + this.reactionForce[1]; //+ this.springForce[1];
+        this.resultantForce[0] = this.reactionForce[0] + this.springForce[0];
+        this.resultantForce[1] = this.forceDueToGravity + this.reactionForce[1] + this.springForce[1];
     }
 
 
