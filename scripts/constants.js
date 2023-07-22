@@ -10,16 +10,16 @@ let backgroundGreen = 68;
 let backgroundBlue = 129;
 
 // Joints configuration
-let jointsRadius = 0.1;
-let jointsMass = 15;
-let numberOfJoints = 16;
+let jointsRadius = 8;
+let jointsMass = 30;
+let numberOfJoints = 4;
 
 // Spring configuration
 let springRestingLength = 50;
 let springConstant = 800;
-let springWidth = 1;
+let springWidth = 3;
 
 // Constants
 let g = -9.81;
-let boundaryDampingCoefficient = 0.6;
+let boundaryDampingCoefficient = 0.9;
 let coefficient_of_restitution = 1.0;
