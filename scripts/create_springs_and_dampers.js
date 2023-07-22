@@ -43,25 +43,28 @@ function createSprings(jointsGrid) {
                 let col = j + offset[1];
                 let tempLength = springRestingLength;
 
-                if (isValidJointIndex(jointsGrid, row, col) && !springAlreadyAttached(springs, jointsGrid[i][j], joint2[row][col])) {
+                if (isValidJointIndex(jointsGrid, row, col) && !springAlreadyAttached(springs, jointsGrid[i][j], jointsGrid[row][col])) {
                     // Increase the restingLength if the spring is a diagonal
-                    tempLength = (offset.first == 0 || offset.second == 0) ? tempLength : sqrt(2.0 * tempLength * tempLength);
-                    
-                    if (tempLength == springRestingLength) {
-                        let spring = new Spring(
-                            springID,
-                            springConstant,
-                            tempLength,
-                            [joint[i][j], joint[row][col]],
-                            [joint[i][j].getPos(), joint[row][col].getPos()],
-                        )
-                        
-                        spring.setJointID(joint[i][j].getID(), joint[row][col].getID())
-
-                        springs.push(spring);
-                        springID++;
+                    if (offset[0] == 0 || offset[1] == 0) {
+                        tempLength = springRestingLength;
+                    } else {
+                        tempLength = sqrt(2.0 * tempLength * tempLength);
                     }
+                    
+                    let spring = new Spring(
+                        springID,
+                        springConstant,
+                        tempLength,
+                        [jointsGrid[i][j], jointsGrid[row][col]],
+                        [jointsGrid[i][j].getPosition(), jointsGrid[row][col].getPosition()],
+                        [jointsGrid[i][j].getID(), jointsGrid[row][col].getID()]
+                    )
 
+                    jointsGrid[i][j].setSpring(spring);
+                    jointsGrid[row][col].setSpring(spring);
+
+                    springs.push(spring);
+                    springID++;
                 }
             }
 

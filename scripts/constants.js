@@ -12,6 +12,7 @@ let backgroundBlue = 129;
 // Joints configuration
 let jointsRadius = 10;
 let jointsMass = 20;
+let numJoints = 2
 
 // Spring configuration
 let springRestingLength = 50;

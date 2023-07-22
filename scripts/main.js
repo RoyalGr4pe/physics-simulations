@@ -1,10 +1,12 @@
 let canvas;
 let jointsGrid;
-let deltaTime
+let springs;
+let deltaTime;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-  jointsGrid = createJoints(16, windowWidth, windowHeight)
+  jointsGrid = createJoints(numJoints, windowWidth, windowHeight);
+  springs = createSprings(jointsGrid);
 }
 
 function draw(){
@@ -15,27 +17,33 @@ function draw(){
   translate(-windowWidth/2, windowHeight/2, 0);
   scale(1, -1); // Invert the Y-axis
   
-  updateJoints();
-  jointCollisionHandler(jointsGrid);
-  renderJoints();
+  updateJointsAndSprings();
+  renderJointsAndSprings();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function updateJoints() {
+function updateJointsAndSprings() {
+  jointCollisionHandler(jointsGrid);
   for (joints of jointsGrid) {
     for (joint of joints) {
-      joint.update(windowWidth, windowHeight, deltaTime)
+      joint.update(windowWidth, windowHeight, deltaTime);
     }
+  }
+  for (spring of springs) {
+    spring.update();
   }
 }
 
-function renderJoints() {
+function renderJointsAndSprings() {
+  for (spring of springs) {
+    spring.render();
+  }
   for (joints of jointsGrid) {
     for (joint of joints) {
-      joint.render()
+      joint.render();
     }
   }
 }

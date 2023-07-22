@@ -6,9 +6,11 @@ class Joint {
         this.position = position;
         this.velocity = velocity;
         this.acceleration = acceleration;
-        this.forceDueToGravity = 
-        this.force = [0, 0];
+        this.forceDueToGravity = 0;
+        this.resultantForce = [0, 0];
         this.reactionForce = [0, 0]
+        this.springForce = [0, 0];
+        this.springs = [];
     }
 
 
@@ -44,15 +46,21 @@ class Joint {
 
 
     updateForce() {
-        this.force[0] = this.forceDueToGravity + this.reactionForce[0];
-        this.force[1] = this.forceDueToGravity + this.reactionForce[1];
+        //this.springForce = [0, 0]
+        //for (spring of springs) {
+            //console.log(spring.calculateSpringForce());
+            //this.springForce = add_array(this.springForce, spring.calculateSpringForce());
+        //}
+        //console.log(this.springForce)
+        this.resultantForce[0] = this.forceDueToGravity + this.reactionForce[0]; //+ this.springForce[0];
+        this.resultantForce[1] = this.forceDueToGravity + this.reactionForce[1]; //+ this.springForce[1];
     }
 
 
     updateAcceleration(deltaTime) {
         // a = f/m
-        this.acceleration[0] = this.force[0] * deltaTime / this.mass;
-        this.acceleration[1] = this.force[1] * deltaTime / this.mass;
+        this.acceleration[0] = this.resultantForce[0] * deltaTime / this.mass;
+        this.acceleration[1] = this.resultantForce[1] * deltaTime / this.mass;
     }
     
     
@@ -166,6 +174,11 @@ class Joint {
     /*-------------------------------------------------------------------*/
     /* Setters                                                           */
     /*-------------------------------------------------------------------*/
+
+
+    setSpring(spring) {
+        this.springs.push(spring);
+    }
 
 
     setForceDueToGravity() {
