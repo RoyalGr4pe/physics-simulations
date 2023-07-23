@@ -4,7 +4,6 @@ function createJoints(numberOfJoints, windowWidth, windowHeight) {
     Such that rows * columns = numJoints
     If rows and columns can't be equal then rows should be larger then columns
     */
-    
     let columns = round(Math.sqrt(numberOfJoints));
     while (numberOfJoints % columns != 0) {
         columns--;

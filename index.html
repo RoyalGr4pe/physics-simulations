@@ -5,27 +5,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-  <script type="text/javascript" src="/scripts/constants.js"></script>
-  <script type="text/javascript" src="/scripts/math_calculations.js"></script>
-  <script type="text/javascript" src="/scripts/joint.js"></script>
-  <script type="text/javascript" src="/scripts/spring.js"></script>
-  <script type="text/javascript" src="/scripts/create_joints.js"></script>
-  <script type="text/javascript" src="/scripts/joint_collisions.js"></script>
-  <script type="text/javascript" src="/scripts/create_springs_and_dampers.js"></script>
-  <!-- Include p5.js library -->
+  <link rel="stylesheet" type="text/css" href="/styles/left_container.css">
+  <link rel="stylesheet" type="text/css" href="/styles/p5_canvas.css">
   <title>Physics Simulations</title>
 </head>
 <body>
-  <script type="text/javascript" src="/scripts/main.js"></script>
 
-  <a href="#" id="resetButton" class="top-screen-button" onclick="resetSketch()">Reset</a>
-
-  <div class="slidecontainer">
-    <p class="spring-constant-value">Spring Constant: <span id="spring-constant-value"></span></p>
-    <input type="range" min="200" max="1000" value="800" class="slider" id="spring-constant-range">
+  <div id="main-canvas" class="p5-canvas">
+    <a href="#" id="resetButton" class="top-screen-button" onclick="resetSketch()">Reset</a>
+    <!-- Include p5.js library -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script type="text/javascript" src="/scripts/constants.js"></script>
+    <script type="text/javascript" src="/scripts/math_calculations.js"></script>
+    <script type="text/javascript" src="/scripts/joint.js"></script>
+    <script type="text/javascript" src="/scripts/spring.js"></script>
+    <script type="text/javascript" src="/scripts/create_joints.js"></script>
+    <script type="text/javascript" src="/scripts/joint_collisions.js"></script>
+    <script type="text/javascript" src="/scripts/create_springs_and_dampers.js"></script>
+    <script type="text/javascript" src="/scripts/main.js"></script>
   </div>
+
+  <div class="leftContainer">
+    <div class="simulation-title">
+      <hr>
+      <h1>Soft Body Simulation</h1>
+      <hr>
+      <h2>Spring Mass System</h2>
+      <hr>
+      <br>
+    </div>
+      
+    <div>
+      <label class="sliderLabel">Spring Constant: <span id="spring-constant-value"></span></label>
+      <input type="range" min="200" max="1000" value="800" class="slider" id="spring-constant-range" step="10">
+    </div>
+
+    <div>
+      <label class="sliderLabel">Number of Joints: <span id="number-of-joints-value"></span></label>
+      <input type="range" min="1" max="16" value="4" class="slider" id="number-of-joints-range" step="1">
+    </div>
+  </div>
+
 
 </body>
 </html>
+
+

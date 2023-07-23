@@ -1,0 +1,50 @@
+.leftContainer {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #005254;
+  box-shadow: 5px 0px;
+}
+
+.simulation-title {
+  color: #ffffff;
+  position: relative;
+  text-align: center;
+  width: 90%;
+  left: 5%;
+}
+
+.slider {
+  width: 80%;
+  left: 10%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;  
+  background: #d3d3d3;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+  
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+
+.sliderLabel {
+  color: #FF5733;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  left: 10%; 
+}

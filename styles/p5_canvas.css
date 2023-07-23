@@ -1,0 +1,29 @@
+.p5-canvas {
+  position: fixed;
+  display: block; /* Remove any whitespace around the canvas */
+  height: 100%;
+  width: 80%;
+  right: 0;
+}
+
+a.top-screen-button {
+  padding: 0.7em 1.4em;
+  border-radius: 0.15em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #3369ff;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+  
+a.top-screen-button:active{
+  top: 0.5em;
+}
