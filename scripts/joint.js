@@ -49,13 +49,12 @@ class Joint {
     updateSpringForce(force) {
         this.springForce[0] += force[0];
         this.springForce[1] += force[1];
-
     }
 
 
     updateForce() {
         this.resultantForce[0] = this.reactionForce[0] + this.springForce[0];
-        this.resultantForce[1] = this.forceDueToGravity + this.reactionForce[1] + this.springForce[1];
+        this.resultantForce[1] = this.reactionForce[1] + this.forceDueToGravity + this.springForce[1];
     }
 
 
@@ -73,7 +72,7 @@ class Joint {
     }
     
     
-    updatePosition() {
+    updatePosition(deltaTime) {
         // s = ut + 1/2at^2
         this.position[0] += (this.velocity[0] * deltaTime) + (0.5 * this.acceleration[0] * deltaTime * deltaTime);
         this.position[1] += (this.velocity[1] * deltaTime) + (0.5 * this.acceleration[1] * deltaTime * deltaTime);

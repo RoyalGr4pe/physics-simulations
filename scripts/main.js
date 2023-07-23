@@ -3,6 +3,8 @@ let canvasDiv;
 let resetSimulation;
 let springConstantSliderValue;
 let springConstantSlider;
+let rotationAngle;
+let centreOfGrid;
 let jointsGrid;
 let springs;
 let deltaTime;
@@ -17,16 +19,26 @@ function setup() {
   springConstantSliderValue = document.getElementById("spring-constant-value")
   springConstantSliderValue.innerHTML = springConstantSlider.value;
 
-  numberOfJointsSlider = document.getElementById("number-of-joints-range");
-  numberOfJointsSliderValue = document.getElementById("number-of-joints-value");
-  numberOfJointsSliderValue.innerHTML = numberOfJointsSlider.value;
-  
   springConstantSlider.oninput = function() {
     springConstantSliderValue.innerHTML = this.value;
   }
 
+  // Number of joints slider
+  numberOfJointsSlider = document.getElementById("number-of-joints-range");
+  numberOfJointsSliderValue = document.getElementById("number-of-joints-value");
+  numberOfJointsSliderValue.innerHTML = numberOfJointsSlider.value;
+  
   numberOfJointsSlider.oninput = function() {
     numberOfJointsSliderValue.innerHTML = this.value;
+  }
+
+  // Starting angle slider
+  startingAngleSlider = document.getElementById("angle-range");
+  startingAngleSliderValue = document.getElementById("angle-value");
+  startingAngleSliderValue.innerHTML = startingAngleSlider.value;
+
+  startingAngleSlider.oninput = function() {
+    startingAngleSliderValue.innerHTML = this.value;
   }
 
   // Starts or resets the sketch
@@ -67,7 +79,7 @@ function updateJointsAndSprings() {
 }
 
 
-function renderJointsAndSprings() {
+function renderJointsAndSprings() { 
   for (spring of springs) {
     spring.render();
   }
@@ -81,5 +93,16 @@ function renderJointsAndSprings() {
 
 function resetSketch() {
   jointsGrid = createJoints(numberOfJointsSlider.value, width, height);
+
+  centreOfGrid = calculateCentreOfGrid(jointsGrid, rotationAngle);
+  rotationAngle = (startingAngleSlider.value * Math.PI)/180;
+
+  for (joints of jointsGrid) {
+    for (joint of joints) {
+      let positionAfterRotation = calculatePositionAfterRotation(joint.getPosition(), rotationAngle, centreOfGrid);
+      joint.setPosition(positionAfterRotation);
+    }
+  }
+
   springs = createSprings(jointsGrid);
 }
