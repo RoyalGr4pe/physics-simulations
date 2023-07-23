@@ -1,6 +1,6 @@
 let canvas;
 let resetSimulation;
-let springConstantSliderText;
+let springConstantSliderValue;
 let springConstantSlider;
 let jointsGrid;
 let springs;
@@ -11,17 +11,18 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
 
   // Spring Constant slider
-  springConstantSlider = createSlider(200, 1000, 800, 10);
-  springConstantSlider.position(10, 50);
-  springConstantSlider.style('width', '200px');
-
-  springConstantSliderText = createElement("h3", "Spring Constant:  " + springConstantSlider.value());
-  springConstantSliderText.style('color', ' #FF5733');
-  springConstantSliderText.position(10, 5);
+  springConstantSlider = document.getElementById("spring-constant-range");
+  springConstantSliderValue = document.getElementById("spring-constant-value")
+  springConstantSliderValue.innerHTML = springConstantSlider.value;
+  
+  springConstantSlider.oninput = function() {
+    springConstantSliderValue.innerHTML = this.value;
+  }
 
   // Starts or resets the sketch
   resetSketch();
 }
+
 
 function draw(){
   deltaTime = speed * (window.performance.now() - canvas._pInst._lastFrameTime)/100;
@@ -30,17 +31,16 @@ function draw(){
   frameRate(fps);
   translate(-windowWidth/2, windowHeight/2, 0);
   scale(1, -1); // Invert the Y-axis
-  
-  // Update Spring Constant slider text
-  springConstantSliderText.html("Spring Constant:  " + springConstantSlider.value());
 
   updateJointsAndSprings();
   renderJointsAndSprings();
 }
 
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
 
 function updateJointsAndSprings() {
   jointCollisionHandler(jointsGrid);
@@ -51,10 +51,11 @@ function updateJointsAndSprings() {
   }
   // Update all the springs
   for (spring of springs) {
-    spring.setSpringConstant(springConstantSlider.value());
+    spring.setSpringConstant(springConstantSlider.value);
     spring.update();
   }
 }
+
 
 function renderJointsAndSprings() {
   for (spring of springs) {
@@ -66,6 +67,7 @@ function renderJointsAndSprings() {
     }
   }
 }
+
 
 function resetSketch() {
   jointsGrid = createJoints(numberOfJoints, windowWidth, windowHeight);

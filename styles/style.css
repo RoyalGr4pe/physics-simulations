@@ -27,9 +27,11 @@ a.top-screen-button{
   transform: translate(-50%, -50%); /* Center the button perfectly on top of the canvas */
 }
 
+
 a.top-screen-button:active{
   top:2em;
 }
+
 
 @media all and (max-width:30em){
   a.top-screen-button{
@@ -37,3 +39,35 @@ a.top-screen-button:active{
     margin:0.4em auto;
   }
 } 
+
+
+.slider {
+  position: absolute;
+  top: 5%; 
+  left: 1%;
+  width: 10%;
+  height: 10px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.spring-constant-value {
+  position: absolute;
+  top: 0%; 
+  left: 1%;
+  color: #FF5733;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
