@@ -1,13 +1,14 @@
 let canvas;
+let resetSimulation;
 let springConstantSliderText;
 let springConstantSlider;
 let jointsGrid;
 let springs;
 let deltaTime;
 
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight, WEBGL);
-
 
   // Spring Constant slider
   springConstantSlider = createSlider(200, 1000, 800, 10);
@@ -18,8 +19,8 @@ function setup() {
   springConstantSliderText.style('color', ' #FF5733');
   springConstantSliderText.position(10, 5);
 
-  jointsGrid = createJoints(numberOfJoints, windowWidth, windowHeight);
-  springs = createSprings(jointsGrid);
+  // Starts or resets the sketch
+  resetSketch();
 }
 
 function draw(){
@@ -64,4 +65,9 @@ function renderJointsAndSprings() {
       joint.render();
     }
   }
+}
+
+function resetSketch() {
+  jointsGrid = createJoints(numberOfJoints, windowWidth, windowHeight);
+  springs = createSprings(jointsGrid);
 }

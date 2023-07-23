@@ -1,8 +1,39 @@
 body, html {
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 canvas {
   display: block; /* Remove any whitespace around the canvas */
 }
+
+a.top-screen-button{
+  display:inline-block;
+  padding:0.7em 1.4em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.15em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  text-transform:uppercase;
+  font-weight:400;
+  color:#FFFFFF;
+  background-color:#3369ff;
+  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+  text-align:center;
+  position: absolute;
+  top: 3%; /* Position the button 50% from the top of the container */
+  left: 50%; /* Position the button 50% from the left of the container */
+  transform: translate(-50%, -50%); /* Center the button perfectly on top of the canvas */
+}
+
+a.top-screen-button:active{
+  top:2em;
+}
+
+@media all and (max-width:30em){
+  a.top-screen-button{
+    display:block;
+    margin:0.4em auto;
+  }
+} 
