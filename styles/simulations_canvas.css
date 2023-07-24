@@ -60,8 +60,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
     background-color: transparent;
 
     &:focus {
@@ -69,29 +68,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     }
 }
 
-.slider::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 3px;
-    background: rgb(246, 114, 128);
-    background: -webkit-linear-gradient(
-        left,
-        rgba(246, 114, 128, 1) 0%,
-        rgba(192, 108, 132, 1) 50%,
-        rgba(53, 92, 125, 1) 100%
-    );
-    background: linear-gradient(
-        to right,
-        rgba(246, 114, 128, 1) 0%,
-        rgba(192, 108, 132, 1) 50%,
-        rgba(53, 92, 125, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient(
-        startColorstr="#f67280",
-        endColorstr="#355c7d",
-        GradientType=1
-    );
-}
+
 
 .slider::-moz-range-track {
     -moz-appearance: none;
@@ -99,37 +76,6 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     height: 3px;
     background: rgb(246, 114, 128);
     background: -moz-linear-gradient(
-        left,
-        rgba(246, 114, 128, 1) 0%,
-        rgba(192, 108, 132, 1) 50%,
-        rgba(53, 92, 125, 1) 100%
-    );
-    background: linear-gradient(
-        to right,
-        rgba(246, 114, 128, 1) 0%,
-        rgba(192, 108, 132, 1) 50%,
-        rgba(53, 92, 125, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient(
-        startColorstr="#f67280",
-        endColorstr="#355c7d",
-        GradientType=1
-    );
-}
-
-.slider::-ms-track {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    height: 3px;
-    background: rgb(246, 114, 128);
-    background: -moz-linear-gradient(
-        left,
-        rgba(246, 114, 128, 1) 0%,
-        rgba(192, 108, 132, 1) 50%,
-        rgba(53, 92, 125, 1) 100%
-    );
-    background: -webkit-linear-gradient(
         left,
         rgba(246, 114, 128, 1) 0%,
         rgba(192, 108, 132, 1) 50%,
@@ -157,9 +103,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     width: 20px;
     position: relative;
     bottom: 8px;
-    background: #222
-    url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
-    center no-repeat;
+    background: #222 center no-repeat;
     background-size: 50%;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
     cursor: grab;
@@ -179,9 +123,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     width: 20px;
     position: relative;
     bottom: 8px;
-    background: #222
-        url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
-        center no-repeat;
+    background: #222 center no-repeat;
     background-size: 50%;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
     cursor: grab;
@@ -192,92 +134,61 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
 }
 
 
-
-/* Slider Labels */
 .sliderLabel {
     color: #ffffff;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    margin-left: 5%;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
     text-shadow: 0px 0px 20px black
 }
 
-  
 
+/* Response Side Bar */
 @media screen and (max-width: 1456px) {
-    .p5-canvas {
-        position: fixed;
-        display: block; /* Remove any whitespace around the canvas */
-        height: 100%;
-        width: 80%;
-        right: 0;
-    }
-
-    /* Reduce font size for smaller screens */
     .simulation-title {
-        color: #ffffff;
-        text-align: center;
         font-size: 20px;
-        margin-bottom: 20px;
     }
 
-    /* Adjust the font size of slider labels for smaller screens */
     .sliderLabel {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
-
 
 @media screen and (max-width: 1246px) {
-    .p5-canvas {
-        position: fixed;
-        display: block; /* Remove any whitespace around the canvas */
-        height: 100%;
-        width: 80%;
-        right: 0;
-    }
-
-    /* Reduce font size for smaller screens */
     .simulation-title {
-        color: #ffffff;
-        text-align: center;
         font-size: 16px;
-        margin-bottom: 20px;
     }
 
-    /* Adjust the font size of slider labels for smaller screens */
     .sliderLabel {
         font-size: 12px;
     }
 }
-
 
 @media screen and (max-width: 1038px) {
-    /* Reduce font size for smaller screens */
     .simulation-title {
-        color: #ffffff;
-        text-align: center;
-        font-size: 18px;
-        margin-bottom: 20px;
+        font-size: 14px;
     }
 
-    /* Adjust the font size of slider labels for smaller screens */
     .sliderLabel {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
+@media screen and (max-width: 934px) {
+    .simulation-title {
+        font-size: 9px;
+    }
+
+    .sliderLabel {
+        font-size: 7px;
+    }
+}
 
 @media screen and (max-width: 698px) {
     .p5-canvas {
-        position: fixed;
-        display: block; /* Remove any whitespace around the canvas */
-        height: 100%;
         width: 100%;
-        right: 0;
     }
 
     .leftContainer {
