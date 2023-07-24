@@ -68,7 +68,29 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     }
 }
 
-
+.slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -webkit-linear-gradient(
+        left,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr="#f67280",
+        endColorstr="#355c7d",
+        GradientType=1
+    );
+}
 
 .slider::-moz-range-track {
     -moz-appearance: none;
