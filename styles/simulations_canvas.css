@@ -38,7 +38,7 @@ a.top-screen-button:hover{
     top: 0;
     left: 0;
     background-color: #202A44;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 8px 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -50,45 +50,159 @@ a.top-screen-button:hover{
     font-size: 24px;
     margin-bottom: 20px;
     cursor: pointer;
+    text-shadow: 0px 0px 30px black
 }
 
-/* Sliders */
+/*
+https://codepen.io/nerdy-girl/pen/pooyRmW
+*/
 .slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: 90%;
-    left: 10%;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #224952, #d3d3d3);
+    margin-left: 5%;
+    background-color: transparent;
+
+    &:focus {
+      outline-color: #f8b195;
+    }
 }
 
-/* Styling the slider thumb for WebKit browsers (Chrome, Safari, etc.) */
+.slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -webkit-linear-gradient(
+        left,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr="#f67280",
+        endColorstr="#355c7d",
+        GradientType=1
+    );
+}
+
+.slider::-moz-range-track {
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+        left,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr="#f67280",
+        endColorstr="#355c7d",
+        GradientType=1
+    );
+}
+
+.slider::-ms-track {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 3px;
+    background: rgb(246, 114, 128);
+    background: -moz-linear-gradient(
+        left,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        left,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    background: linear-gradient(
+        to right,
+        rgba(246, 114, 128, 1) 0%,
+        rgba(192, 108, 132, 1) 50%,
+        rgba(53, 92, 125, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr="#f67280",
+        endColorstr="#355c7d",
+        GradientType=1
+    );
+}
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 100%;
-    background: #224952;
-    cursor: pointer;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+    url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
+    center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
 }
 
-/* Styling the slider thumb for Firefox */
+
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 100%;
-    background: #224952;
-    cursor: pointer;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #f8b195;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: 8px;
+    background: #222
+        url("http://codemenatalie.com/wp-content/uploads/2019/09/slider-thumb.png")
+        center no-repeat;
+    background-size: 50%;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.4);
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
 }
+
+
 
 /* Slider Labels */
 .sliderLabel {
     color: #ffffff;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    margin-left: 5%;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+    text-shadow: 0px 0px 20px black
 }
 
   
