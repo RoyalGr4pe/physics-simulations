@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
   <link rel="stylesheet" type="text/css" href="/styles/simulations_canvas.css">
-  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <title>Physics Simulations</title>
 </head>
 <body>
 
   <div id="main-canvas" class="p5-canvas">
-    <a href="#" id="resetButton" class="top-screen-button" onclick="resetSketch()">Reset</a>
+    <div class="buttons-container">  
+      <a href="#" id="menu-button" class="top-screen-button" onclick="toggleMenuEvent()">Menu</a>
+      <a href="#" id="reset-button" class="top-screen-button" onclick="resetSketch()">Reset</a>
+    </div>
+
     <!-- Include p5.js library -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
@@ -25,10 +26,12 @@
     <script type="text/javascript" src="/scripts/create_joints.js"></script>
     <script type="text/javascript" src="/scripts/joint_collisions.js"></script>
     <script type="text/javascript" src="/scripts/create_springs_and_dampers.js"></script>
+    <script type="text/javascript" src="/scripts/events.js"></script>
     <script type="text/javascript" src="/scripts/main.js"></script>
   </div>
 
-  <div id="leftContainer" class="leftContainer">
+  <div id="menuContainer" class="menuContainer">
+
     <div class="simulation-title">
       <hr>
       <h2 onclick="resetSketch()">Spring Mass System</h2>
@@ -51,6 +54,7 @@
       <input type="range" min="0" max="360" value="0" class="slider" id="angle-range" step="1">
     </div>
   </div>
+
 
 </body>
 </html>

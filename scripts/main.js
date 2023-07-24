@@ -1,9 +1,18 @@
 let canvas;
 let canvasDiv;
 let resetSimulation;
-let springConstantSliderValue;
-let left_container;
+
 let springConstantSlider;
+let springConstantSliderValue;
+let leftContainer;
+let numberOfJointsSlider;
+let numberOfJointsSliderValue;
+let startingAngleSlider;
+let startingAngleSliderValue;
+let menuButton;
+
+let isMenuOpen = true;
+
 let rotationAngle;
 let centreOfGrid;
 let jointsGrid;
@@ -12,39 +21,24 @@ let deltaTime;
 
 
 function setup() {
-  left_container = document.getElementById("leftContainer");
-
-  canvas = createCanvas(windowWidth - left_container.offsetWidth, windowHeight, WEBGL);
-  canvas.parent("main-canvas");
+  menuContainer = document.getElementById("menuContainer");
+  buttonsContainer = document.getElementById("buttonsContainer");
   
-  // Spring Constant slider
+  canvas = createCanvas(windowWidth - menuContainer.offsetWidth, windowHeight, WEBGL);
+  canvas.parent("main-canvas");
+
   springConstantSlider = document.getElementById("spring-constant-range");
-  springConstantSliderValue = document.getElementById("spring-constant-value")
-  springConstantSliderValue.innerHTML = springConstantSlider.value;
-
-  springConstantSlider.oninput = function() {
-    springConstantSliderValue.innerHTML = this.value;
-  }
-
-  // Number of joints slider
+  springConstantSliderValue = document.getElementById("spring-constant-value");
   numberOfJointsSlider = document.getElementById("number-of-joints-range");
   numberOfJointsSliderValue = document.getElementById("number-of-joints-value");
-  numberOfJointsSliderValue.innerHTML = numberOfJointsSlider.value;
-  
-  numberOfJointsSlider.oninput = function() {
-    numberOfJointsSliderValue.innerHTML = this.value;
-  }
-
-  // Starting angle slider
   startingAngleSlider = document.getElementById("angle-range");
   startingAngleSliderValue = document.getElementById("angle-value");
-  startingAngleSliderValue.innerHTML = startingAngleSlider.value;
+  menuButton = document.getElementById("menu-button");
 
-  startingAngleSlider.oninput = function() {
-    startingAngleSliderValue.innerHTML = this.value;
-  }
+  // Add event listener to the toggle button
+  menuButton.addEventListener("click", toggleMenuEvent());
 
-  // Starts or resets the sketch
+  updateSliderInfo();
   resetSketch();
 }
 
@@ -54,7 +48,7 @@ function draw(){
 
   background(backgroundColourHex);
   frameRate(fps);
-  translate(-(windowWidth - left_container.offsetWidth)/2, windowHeight/2, 0);
+  translate(-(windowWidth - menuContainer.offsetWidth)/2, windowHeight/2, 0);
   scale(1, -1); // Invert the Y-axis
 
   updateJointsAndSprings();
@@ -63,8 +57,7 @@ function draw(){
 
 
 function windowResized() {
-  console.log(width)
-  resizeCanvas(windowWidth - left_container.offsetWidth, windowHeight);
+  resizeCanvas(windowWidth - menuContainer.offsetWidth, windowHeight);
 }
 
 
@@ -72,7 +65,7 @@ function updateJointsAndSprings() {
   jointCollisionHandler(jointsGrid);
   for (joints of jointsGrid) {
     for (joint of joints) {
-      joint.update(windowWidth - left_container.offsetWidth, windowHeight, deltaTime);
+      joint.update(windowWidth - menuContainer.offsetWidth, windowHeight, deltaTime);
     }
   }
   // Update all the springs
@@ -95,8 +88,28 @@ function renderJointsAndSprings() {
 }
 
 
+function updateSliderInfo() {
+  springConstantSliderValue.innerHTML = springConstantSlider.value;
+  numberOfJointsSliderValue.innerHTML = numberOfJointsSlider.value;
+  startingAngleSliderValue.innerHTML = startingAngleSlider.value;
+
+  springConstantSlider.oninput = function() {
+    springConstantSliderValue.innerHTML = this.value;
+  }  
+  
+  numberOfJointsSlider.oninput = function() {
+    numberOfJointsSliderValue.innerHTML = this.value;
+  }
+
+  startingAngleSlider.oninput = function() {
+    startingAngleSliderValue.innerHTML = this.value;
+  }
+}
+ 
+
+
 function resetSketch() {
-  jointsGrid = createJoints(numberOfJointsSlider.value, windowWidth - left_container.offsetWidth, windowHeight);
+  jointsGrid = createJoints(numberOfJointsSlider.value, windowWidth - menuContainer.offsetWidth, windowHeight);
 
   centreOfGrid = calculateCentreOfGrid(jointsGrid, rotationAngle);
   rotationAngle = (startingAngleSlider.value * Math.PI)/180;
