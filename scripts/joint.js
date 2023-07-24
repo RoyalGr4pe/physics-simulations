@@ -54,7 +54,7 @@ class Joint {
 
     updateForce() {
         this.resultantForce[0] = this.reactionForce[0] + this.springForce[0];
-        this.resultantForce[1] = this.reactionForce[1] + this.forceDueToGravity + this.springForce[1];
+        this.resultantForce[1] = this.reactionForce[1] + this.springForce[1] + this.forceDueToGravity;
     }
 
 

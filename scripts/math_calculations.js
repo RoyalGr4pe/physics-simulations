@@ -17,10 +17,9 @@ function add_array(array1, array2) {
 function calculatePositionAfterRotation(position, rotationAngle, centreOfGrid) {
     let distanceToCentreX = position[0] - centreOfGrid[0];
     let distanceToCentreY = position[1] - centreOfGrid[1];
-
     if (rotationAngle == Math.PI) {
-        position[0] -= 2 * distanceToCentreX - position[0];
-        position[1] -= 2 * distanceToCentreY - position[1]; 
+        position[0] -= 2 * distanceToCentreX;
+        position[1] -= 2 * distanceToCentreY; 
         return position;
     }
 

@@ -5,9 +5,7 @@ let fps = 60;
 let speed = 1;
 
 // Background configuration
-let backgroundRed = 0;
-let backgroundGreen = 68;
-let backgroundBlue = 129;
+let backgroundColourHex = "#27445C";//"#202A44";
 
 // Joints configuration
 let jointsRadius = 8;

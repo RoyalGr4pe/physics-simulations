@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/styles/style.css">
-  <link rel="stylesheet" type="text/css" href="/styles/left_container.css">
-  <link rel="stylesheet" type="text/css" href="/styles/p5_canvas.css">
+  <link rel="stylesheet" type="text/css" href="/styles/simulations_canvas.css">
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <title>Physics Simulations</title>
 </head>
 <body>
@@ -26,24 +28,22 @@
     <script type="text/javascript" src="/scripts/main.js"></script>
   </div>
 
-  <div class="leftContainer">
+  <div id="leftContainer" class="leftContainer">
     <div class="simulation-title">
       <hr>
-      <h1>Soft Body Simulation</h1>
-      <hr>
-      <h2>Spring Mass System</h2>
+      <h2 onclick="resetSketch()">Spring Mass System</h2>
       <hr>
       <br>
     </div>
       
     <div>
       <label class="sliderLabel">Spring Constant: <span id="spring-constant-value"></span></label>
-      <input type="range" min="200" max="2000" value="800" class="slider" id="spring-constant-range" step="10">
+      <input type="range" min="200" max="2000" value="1000" class="slider" id="spring-constant-range" step="10">
     </div>
 
     <div>
       <label class="sliderLabel">Number of Joints: <span id="number-of-joints-value"></span></label>
-      <input type="range" min="1" max="64" value="4" class="slider" id="number-of-joints-range" step="1">
+      <input type="range" min="1" max="64" value="49" class="slider" id="number-of-joints-range" step="1">
     </div>
   
     <div>
@@ -51,7 +51,6 @@
       <input type="range" min="0" max="360" value="0" class="slider" id="angle-range" step="1">
     </div>
   </div>
-
 
 </body>
 </html>
