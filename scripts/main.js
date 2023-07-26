@@ -15,7 +15,7 @@ let sliderLabels;
 let jointsGrid;
 let lastFrame;
 let deltaTime;
-let isMenuOpen = true;
+let isMenuOpen = false;
 let minWindowWidth = 800;
 
 // Sliders
