@@ -8,7 +8,6 @@ class Joint {
         this.acceleration = acceleration;
         this.forceDueToGravity = 0;
         this.resultantForce = [0, 0];
-        this.reactionForce = [0, 0];
         this.springForce = [0, 0];
         this.springs = [];
     }
@@ -19,13 +18,13 @@ class Joint {
     /*-------------------------------------------------------------------*/
 
 
-    update(windowWidth, windowHeight, deltaTime) {
-        this.updateForce(deltaTime);
-        this.updateAcceleration(deltaTime);
-        this.updateVelocity(deltaTime);
-        this.updatePosition(deltaTime);
-        this.boundaryCollisionHandler(0, windowWidth, 0, windowHeight);
-        this.springForce = [0, 0]
+    update(canvasWidth, canvasHeight) {
+        this.updateForce();
+        this.updateAcceleration();
+        this.updateVelocity();
+        this.updatePosition();
+        this.boundaryCollisionHandler(0, canvasWidth, 0, canvasHeight);
+        this.springForce = [0, 0];
     }
     
     
@@ -53,15 +52,21 @@ class Joint {
 
 
     updateForce() {
-        this.resultantForce[0] = this.reactionForce[0] + this.springForce[0] + this.forceDueToGravity;
-        this.resultantForce[1] = this.reactionForce[1] + this.springForce[1] + this.forceDueToGravity;
+        this.resultantForce[0] = this.springForce[0];
+        this.resultantForce[1] = this.springForce[1] + this.forceDueToGravity;
+        if (this.resultantForce[0] == NaN) {
+            this.resultantForce[0] = 0;
+        }
+        if (this.resultantForce[1] == NaN) {
+            this.resultantForce[1] = 0;
+        }
     }
 
 
-    updateAcceleration(deltaTime) {
+    updateAcceleration() {
         // a = f/m
-        this.acceleration[0] = this.resultantForce[0] * deltaTime / this.mass;
-        this.acceleration[1] = this.resultantForce[1] * deltaTime / this.mass;
+        this.acceleration[0] = this.resultantForce[0] / this.mass;
+        this.acceleration[1] = this.resultantForce[1] / this.mass;
     }
     
     
@@ -72,7 +77,7 @@ class Joint {
     }
     
     
-    updatePosition(deltaTime) {
+    updatePosition() {
         // s = ut + 1/2at^2
         this.position[0] += (this.velocity[0] * deltaTime) + (0.5 * this.acceleration[0] * deltaTime * deltaTime);
         this.position[1] += (this.velocity[1] * deltaTime) + (0.5 * this.acceleration[1] * deltaTime * deltaTime);
@@ -161,6 +166,10 @@ class Joint {
         return this.mass;
     }
 
+    getRadius() {
+        return this.radius;
+    }
+
 
     getPosition() {
         return this.position;
@@ -194,6 +203,11 @@ class Joint {
 
     setVelocity(newVelocity) {
         this.velocity = newVelocity;
+    }
+
+
+    setMass(newMass) {
+        this.mass = newMass;
     }
 
 

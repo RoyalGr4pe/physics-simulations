@@ -1,62 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/styles/style.css">
-  <link rel="stylesheet" type="text/css" href="/styles/simulations_canvas.css">
+  <link rel="stylesheet" href="/styles/body_html_style.css">
+  <link rel="stylesheet" href="/styles/main_container_style.css">
+  <link rel="stylesheet" href="/styles/side_bar_container_style.css">
+  <link rel="stylesheet" href="/styles/buttons_container_style.css">
+  <link rel="stylesheet" href="/styles/simulation_container_style.css">
+  <link rel="stylesheet" href="/styles/slider_div_styles.css">
+  <!-- Include p5.js library -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script type="text/javascript" src="/scripts/constants.js"></script>
+  <script type="text/javascript" src="/scripts/math_calculations.js"></script>
+  <script type="text/javascript" src="/scripts/joint.js"></script>
+  <script type="text/javascript" src="/scripts/spring.js"></script>
+  <script type="text/javascript" src="/scripts/create_joints.js"></script>
+  <script type="text/javascript" src="/scripts/create_springs.js"></script>
+  <script type="text/javascript" src="/scripts/response_elements.js"></script>
+  <script type="text/javascript" src="/scripts/updater.js"></script>
+  <script type="text/javascript" src="/scripts/events.js"></script>
+  <script type="text/javascript" src="/scripts/main.js"></script>
   <title>Physics Simulations</title>
 </head>
 <body>
+  <div id="main-container" class="main-container">
+    <div id="side-bar-container" class="side-bar-container">
+      <div class="buttons-container">
+        <button id="menu-button" class="side-bar-button" onclick="toggleMenuButtonEvent()">
+          <span></span>
+        </button>
+      </div>
 
-  <div id="main-canvas" class="p5-canvas">
-    <div class="buttons-container">  
-      <a href="#" id="menu-button" class="top-screen-button" onclick="toggleMenuEvent()">Menu</a>
-      <a href="#" id="reset-button" class="top-screen-button" onclick="resetSketch()">Reset</a>
-    </div>
+      <div id="simulation-title-div" class="simulation-title">
+        <hr>
+        <h2 onclick="resetSketchEvent()">Spring Mass System</h2>
+        <hr>
+        <br>
+      </div>    
 
-    <!-- Include p5.js library -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-    <script type="text/javascript" src="/scripts/constants.js"></script>
-    <script type="text/javascript" src="/scripts/math_calculations.js"></script>
-    <script type="text/javascript" src="/scripts/joint.js"></script>
-    <script type="text/javascript" src="/scripts/spring.js"></script>
-    <script type="text/javascript" src="/scripts/create_joints.js"></script>
-    <script type="text/javascript" src="/scripts/joint_collisions.js"></script>
-    <script type="text/javascript" src="/scripts/create_springs_and_dampers.js"></script>
-    <script type="text/javascript" src="/scripts/events.js"></script>
-    <script type="text/javascript" src="/scripts/main.js"></script>
-  </div>
-
-  <div id="menuContainer" class="menuContainer">
-
-    <div class="simulation-title">
-      <hr>
-      <h2 onclick="resetSketch()">Spring Mass System</h2>
-      <hr>
-      <br>
-    </div>
+      <div id="settings-container" class="settings-container">
+        <div class="slider-container">
+          <label class="slider-label">Spring Constant: <span id="spring-constant-value"></span></label>
+          <input type="range" min="200" max="2000" value="1000" class="slider" id="spring-constant-range" step="10">
+        </div>
+    
+        <div class="slider-container">
+          <label class="slider-label">Number of Joints: <span id="number-of-joints-value"></span></label>
+          <input type="range" min="1" max="256" value="49" class="slider" id="number-of-joints-range" step="1">
+        </div>
       
-    <div>
-      <label class="sliderLabel">Spring Constant: <span id="spring-constant-value"></span></label>
-      <input type="range" min="200" max="2000" value="1000" class="slider" id="spring-constant-range" step="10">
+        <div class="slider-container">
+          <label class="slider-label">Starting Angle: <span id="starting-angle-value"></span>°</label>
+          <input type="range" min="0" max="360" value="25" class="slider" id="starting-angle-range" step="1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Spring Length: <span id="spring-length-value"></span></label>
+          <input type="range" min="10" max="100" value="70" class="slider" id="spring-length-range" step="1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Joint Mass: <span id="joints-mass-value"></span></label>
+          <input type="range" min="1" max="100" value="40" class="slider" id="joints-mass-range" step="1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Joint Radius: <span id="joints-radius-value"></span></label>
+          <input type="range" min="0.1" max="20" value="8" class="slider" id="joints-radius-range" step="0.1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Simulation Speed: <span id="simulation-speed-value"></span></label>
+          <input type="range" min="0.1" max="5" value="5" class="slider" id="simulation-speed-range" step="0.1">
+        </div>
+
+      </div>
+
     </div>
 
-    <div>
-      <label class="sliderLabel">Number of Joints: <span id="number-of-joints-value"></span></label>
-      <input type="range" min="1" max="64" value="49" class="slider" id="number-of-joints-range" step="1">
-    </div>
-  
-    <div>
-      <label class="sliderLabel">Starting Angle: <span id="angle-value"></span>°</label>
-      <input type="range" min="0" max="360" value="0" class="slider" id="angle-range" step="1">
+    <div id="simulation-container" class="simulation-container">
+
     </div>
   </div>
-
-
 </body>
 </html>
-
-

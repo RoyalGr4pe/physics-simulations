@@ -24,7 +24,7 @@ function isValidJointIndex(jointsGrid, row, col) {
 }
 
 
-function createSprings(jointsGrid) {
+function createSprings(jointsGrid, springConstant, springRestingLength) {
     let springs = [];
 
     let springID = 1;
@@ -48,9 +48,8 @@ function createSprings(jointsGrid) {
                     if (offset[0] == 0 || offset[1] == 0) {
                         tempLength = springRestingLength;
                     } else {
-                            tempLength = sqrt(2.0 * tempLength**2);
+                        tempLength = sqrt(2.0 * tempLength**2);
                     }
-                    
                     
                     let spring = new Spring(
                        springID,

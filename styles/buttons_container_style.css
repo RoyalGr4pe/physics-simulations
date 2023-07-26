@@ -1,0 +1,47 @@
+.buttons-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: relative;
+    /*border-style: solid;*/
+    /*border-color: #00ffff;*/
+    justify-content: center;
+    align-items: center;
+}
+
+.side-bar-button {
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+}
+
+.side-bar-button span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff; 
+    top: 50%;
+    margin-top: -2px;
+}
+
+.side-bar-button span:before,
+.side-bar-button span:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.side-bar-button span:before {
+    top: -10px;
+}
+
+.side-bar-button span:after {
+    bottom: -10px;
+}

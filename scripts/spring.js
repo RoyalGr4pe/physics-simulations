@@ -22,8 +22,8 @@ class Spring {
 
 
     render() {
-        stroke(255, 255, 255)
-        strokeWeight(springWidth)
+        stroke(255, 255, 255);
+        strokeWeight(springWidth);
         line(this.joints[0].getPosition()[0], this.joints[0].getPosition()[1], this.joints[1].getPosition()[0], this.joints[1].getPosition()[1])     
     }
 
@@ -55,15 +55,10 @@ class Spring {
         let springForceMagnitude = -this.k * extension;
 
         let theta = Math.atan2(dy, dx);
-        let springForceX = springForceMagnitude * Math.cos(theta);
-        let springForceY = springForceMagnitude * Math.sin(theta);
+        let springForceX = springDampingCoefficient * springForceMagnitude * Math.cos(theta);
+        let springForceY = springDampingCoefficient * springForceMagnitude * Math.sin(theta);
 
         return [springForceX, springForceY];
-    }
-
-
-    applySpringForce() {
-        this.joints[0]
     }
 
 
