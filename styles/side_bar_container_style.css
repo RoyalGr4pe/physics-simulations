@@ -10,7 +10,8 @@
     grid-template-columns: 100%;
     grid-template-rows: 5% 20% 70% 5%;
     background-color: #202A44;
-    box-shadow: 8px 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .simulation-title {
@@ -34,14 +35,13 @@
     grid-row-end: 4;
     width: 100%;
     height: auto;
-    bottom: 0px;
     display: flex;
     justify-content: center;
 }
 
 .side-bar-reset-button {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     display: flex;
     border-radius: 50%;
     justify-content: center;
@@ -53,10 +53,12 @@
 }
 
 .side-bar-reset-button i {
-    font-size: 20px;
+    font-size: 22px;
     color: #ffffff;
 }
 
 .side-bar-reset-button:hover {
+    width: 46px;
+    height: 46px; 
     background-color: #101010;
 }
