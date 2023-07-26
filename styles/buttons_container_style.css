@@ -1,4 +1,4 @@
-.buttons-container {
+.menu-button-container {
     width: 100%;
     height: auto;
     display: flex;
@@ -9,16 +9,16 @@
     align-items: center;
 }
 
-.side-bar-button {
+.side-bar-menu-button {
     cursor: pointer;
     width: 30px;
     height: 20px;
     position: relative;
-    background-color: transparent;
+    background: transparent; 
     border: none;
 }
 
-.side-bar-button span {
+.side-bar-menu-button span {
     display: block;
     position: absolute;
     height: 4px;
@@ -28,8 +28,8 @@
     margin-top: -2px;
 }
 
-.side-bar-button span:before,
-.side-bar-button span:after {
+.side-bar-menu-button span:before,
+.side-bar-menu-button span:after {
     content: "";
     display: block;
     height: 4px;
@@ -38,10 +38,15 @@
     position: absolute;
 }
 
-.side-bar-button span:before {
+.side-bar-menu-button span:before {
     top: -10px;
 }
 
-.side-bar-button span:after {
+.side-bar-menu-button span:after {
     bottom: -10px;
+}
+
+/* On hover, change the background color slightly */
+.side-bar-menu-button:hover {
+    top: -1px;
 }

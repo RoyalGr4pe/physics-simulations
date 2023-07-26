@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="/styles/body_html_style.css">
   <link rel="stylesheet" href="/styles/main_container_style.css">
   <link rel="stylesheet" href="/styles/side_bar_container_style.css">
@@ -28,8 +29,8 @@
 <body>
   <div id="main-container" class="main-container">
     <div id="side-bar-container" class="side-bar-container">
-      <div class="buttons-container">
-        <button id="menu-button" class="side-bar-button" onclick="toggleMenuButtonEvent()">
+      <div class="menu-button-container">
+        <button id="menu-button" class="side-bar-menu-button" onclick="toggleMenuButtonEvent()">
           <span></span>
         </button>
       </div>
@@ -79,11 +80,15 @@
 
       </div>
 
+      <div id="reset-button-container" class="reset-button-container">
+        <button id="reset-button" class="side-bar-reset-button" onclick="resetSketchEvent()">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+      </div>
+
     </div>
 
-    <div id="simulation-container" class="simulation-container">
-
-    </div>
+    <div id="simulation-container" class="simulation-container"></div>
   </div>
 </body>
 </html>

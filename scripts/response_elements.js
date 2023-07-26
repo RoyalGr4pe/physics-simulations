@@ -22,7 +22,7 @@ function adjustElementsSize() {
             simulationTitle.style.display = "block";
         }
         else if (isMenuOpen == false) {
-            mainContainer.style.gridTemplateColumns = "10% 90%";
+            mainContainer.style.gridTemplateColumns = "15% 85%";
             sliderContainer.style.display = "none";
             simulationTitle.style.display = "none";
         }       

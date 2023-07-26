@@ -8,7 +8,7 @@
     grid-row-end: 1;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 5% 20% 75%;
+    grid-template-rows: 5% 20% 70% 5%;
     background-color: #202A44;
     box-shadow: 8px 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -24,4 +24,39 @@
     margin-bottom: 20px;
     cursor: pointer;
     text-shadow: 0px 0px 30px black;
+}
+
+
+.reset-button-container {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.side-bar-reset-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #dddddd;
+    transition: background-color 0.3s ease;
+}
+
+.side-bar-reset-button i {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.side-bar-reset-button:hover {
+    background-color: #101010;
 }

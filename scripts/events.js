@@ -1,7 +1,7 @@
 function toggleMenuButtonEvent() {
   if (windowWidth >= minWindowWidth) {
     if (mainContainer.style.gridTemplateColumns == "20% 80%") {
-      mainContainer.style.gridTemplateColumns = "10% 90%";
+      mainContainer.style.gridTemplateColumns = "5% 95%";
       isMenuOpen = false;
     } 
     else {
@@ -11,7 +11,7 @@ function toggleMenuButtonEvent() {
   }
   else if (windowWidth < minWindowWidth) {
     if (mainContainer.style.gridTemplateColumns == "100% 0%") {
-      mainContainer.style.gridTemplateColumns = "10% 90%";
+      mainContainer.style.gridTemplateColumns = "15% 85%";
       isMenuOpen = false;
     } 
     else {
