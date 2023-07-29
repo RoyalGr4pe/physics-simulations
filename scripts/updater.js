@@ -23,6 +23,7 @@ function updateSliderInfo() {
   jointMassSliderValue.innerHTML = jointMassSlider.value;
   jointRadiusSliderValue.innerHTML = jointRadiusSlider.value;
   simulationSpeedSliderValue.innerHTML = simulationSpeedSlider.value;
+  gravitySliderValue.innerHTML = gravitySlider.value;
 
   springConstantSlider.oninput = function() {
     springConstantSliderValue.innerHTML = this.value;
@@ -42,7 +43,6 @@ function updateSliderInfo() {
   
   jointMassSlider.oninput = function() {
     jointMassSliderValue.innerHTML = this.value;
-    console.log(typeof(jointMassSlider.value))
   }
 
   jointRadiusSlider.oninput = function() {
@@ -51,6 +51,10 @@ function updateSliderInfo() {
 
   simulationSpeedSlider.oninput = function() {
     simulationSpeedSliderValue.innerHTML = this.value;
+  }
+
+  gravitySlider.oninput = function() {
+    gravitySliderValue.innerHTML = this.value;
   }
 }
   

@@ -19,6 +19,7 @@ class Joint {
 
 
     update(canvasWidth, canvasHeight) {
+        this.setForceDueToGravity();
         this.updateForce();
         this.updateAcceleration();
         this.updateVelocity();
@@ -192,7 +193,7 @@ class Joint {
 
 
     setForceDueToGravity() {
-        this.forceDueToGravity = this.mass * g;
+        this.forceDueToGravity = this.mass * -Number(gravitySlider.value);
     }
 
 

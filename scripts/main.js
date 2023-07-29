@@ -26,15 +26,17 @@ let springLengthSlider;
 let jointMassSlider;
 let jointRadiusSlider;
 let simulationSpeedSlider;
+let gravitySlider;
 
 // Slider values
 let springConstantSliderValue;
 let numberOfJointsSliderValue;
 let startingAngleSliderValue;
-let springLengthValue;
-let jointMassValue;
-let jointRadiusValue;
-let simulationSpeedValue;
+let springLengthSliderValue;
+let jointMassSliderValue;
+let jointRadiusSliderValue;
+let simulationSpeedSliderValue;
+let gravitySliderValue;
 
 
 function setup() {
@@ -56,6 +58,7 @@ function setup() {
   jointMassSlider = document.getElementById("joints-mass-range");
   jointRadiusSlider = document.getElementById("joints-radius-range");
   simulationSpeedSlider = document.getElementById("simulation-speed-range");
+  gravitySlider = document.getElementById("gravity-range");
 
   // Slider values
   springConstantSliderValue = document.getElementById("spring-constant-value");
@@ -65,6 +68,7 @@ function setup() {
   jointMassSliderValue = document.getElementById("joints-mass-value");
   jointRadiusSliderValue = document.getElementById("joints-radius-value");
   simulationSpeedSliderValue = document.getElementById("simulation-speed-value");
+  gravitySliderValue = document.getElementById("gravity-value");
 
   canvas = createCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight, WEBGL);
   canvas.parent(simulationContainer);

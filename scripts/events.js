@@ -1,24 +1,33 @@
 function toggleMenuButtonEvent() {
   if (windowWidth >= minWindowWidth) {
     if (mainContainer.style.gridTemplateColumns == "20% 80%") {
+      mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "5% 95%";
       isMenuOpen = false;
     } 
     else {
+      mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "20% 80%";
       isMenuOpen = true;
     }
   }
   else if (windowWidth < minWindowWidth) {
     if (mainContainer.style.gridTemplateColumns == "100% 0%") {
+      mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "15% 85%";
       isMenuOpen = false;
     } 
     else {
+      mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "100% 0%";
       isMenuOpen = true;
     }
   }
+
+  // Wait for the transition to complete and then remove the class
+  setTimeout(() => {
+    mainContainer.classList.remove("smooth-side-bar-transition");
+  }, 300);
 }
 
 
