@@ -1,22 +1,34 @@
 function toggleMenuButtonEvent() {
+
+  // If window width can have both menu bar and canvas
   if (windowWidth >= minWindowWidth) {
+
+    // Close menu
     if (mainContainer.style.gridTemplateColumns == "20% 80%") {
       mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "5% 95%";
       isMenuOpen = false;
     } 
+
+    // Open menu
     else {
       mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "20% 80%";
       isMenuOpen = true;
     }
   }
+
+  // If window width can only have both small menu bar or canvas
   else if (windowWidth < minWindowWidth) {
+
+    // Close menu
     if (mainContainer.style.gridTemplateColumns == "100% 0%") {
       mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "15% 85%";
       isMenuOpen = false;
     } 
+
+    // Open menu
     else {
       mainContainer.classList.add("smooth-side-bar-transition");
       mainContainer.style.gridTemplateColumns = "100% 0%";
@@ -32,17 +44,23 @@ function toggleMenuButtonEvent() {
 
 
 function resetSketchEvent() {
+  let numberOfJoints = Number(numberOfJointsSlider.value);
+  let springConstant = Number(springConstantSlider.value);
+  let jointsMass = Number(jointMassSlider.value);
+  let springLength = Number(springLengthSlider.value) * pixelConversionConstant;
+  let jointsRadius = Number(jointRadiusSlider.value) * pixelConversionConstant;
+  let rotationAngle = (Number(startingAngleSlider.value) * Math.PI) / 180;
+  
   jointsGrid = createJoints(
-    Number(numberOfJointsSlider.value), 
-    Number(springLengthSlider.value), 
-    Number(jointMassSlider.value),
-    Number(jointRadiusSlider.value),
+    numberOfJoints, 
+    springLength, 
+    jointsMass,
+    jointsRadius,
     simulationContainer.clientWidth, 
     simulationContainer.clientHeight
-  );
-
-  rotationAngle = (Number(startingAngleSlider.value) * Math.PI)/180;
-  centreOfGrid = calculateCentreOfGrid(jointsGrid, rotationAngle);
+    );
+    
+  let centreOfGrid = calculateCentreOfGrid(jointsGrid, rotationAngle);
 
   for (joints of jointsGrid) {
     for (joint of joints) {
@@ -51,5 +69,11 @@ function resetSketchEvent() {
     }
   }
 
-  springs = createSprings(jointsGrid, Number(springConstantSlider.value), Number(springLengthSlider.value));
+  springs = createSprings(jointsGrid, springConstant, springLength);
+}
+
+
+function goToHomeEvent() {
+  // Use window.location to navigate to the index.html page
+  window.location.href = "../index.html"; 
 }

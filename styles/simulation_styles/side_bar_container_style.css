@@ -15,7 +15,7 @@
 }
 
 .smooth-side-bar-transition {
-    transition: grid-template-columns 0.3s ease;
+    transition: grid-template-columns 0.1s ease;
   }
 
 .simulation-title {
@@ -32,7 +32,7 @@
 }
 
 
-.reset-button-container {
+.button-container {
     grid-column-start: 1;
     grid-column-end: 1;
     grid-row-start: 4;
@@ -45,7 +45,7 @@
     justify-content: center;
 }
 
-.side-bar-reset-button {
+.side-bar-button {
     width: 45px;
     height: 45px;
     display: flex;
@@ -56,15 +56,14 @@
     background-color: transparent;
     border: 2px solid #dddddd;
     transition: background-color 0.3s ease;
+    margin: 0 2%;
 }
 
-.side-bar-reset-button i {
-    font-size: 22px;
+.side-bar-button i {
+    font-size: 21px;
     color: #ffffff;
 }
 
-.side-bar-reset-button:hover {
-    width: 46px;
-    height: 46px; 
+.side-bar-button:hover {
     background-color: #101010;
 }

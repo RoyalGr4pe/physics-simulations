@@ -11,6 +11,7 @@ let sliderContainer;
 // Elements
 let simulationTitle;
 let sliderLabels;
+let homeButton;
 
 let jointsGrid;
 let lastFrame;
@@ -49,6 +50,9 @@ function setup() {
   simulationTitle = document.getElementById("simulation-title-div");
   sliderContainer = document.getElementById("settings-container");
   sliderLabels = document.getElementsByClassName("slider-label");
+  homeButton = document.getElementById("home-button");
+  homeButton.style.display = "none";
+
 
   // Sliders
   springConstantSlider = document.getElementById("spring-constant-range");

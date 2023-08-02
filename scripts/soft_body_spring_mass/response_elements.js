@@ -8,11 +8,13 @@ function adjustElementsSize() {
             mainContainer.style.gridTemplateColumns = "20% 80%";
             sliderContainer.style.display = "block";
             simulationTitle.style.display = "block";
+            homeButton.style.display = "block";
         }
         else if (isMenuOpen == false) {
             mainContainer.style.gridTemplateColumns = "5% 95%";
             sliderContainer.style.display = "none";
             simulationTitle.style.display = "none";
+            homeButton.style.display = "none";
         }
     }
     else if (windowWidth < minWindowWidth) {
@@ -20,11 +22,13 @@ function adjustElementsSize() {
             mainContainer.style.gridTemplateColumns = "100% 0%";
             sliderContainer.style.display = "block";
             simulationTitle.style.display = "block";
+            homeButton.style.display = "block";
         }
         else if (isMenuOpen == false) {
             mainContainer.style.gridTemplateColumns = "15% 85%";
             sliderContainer.style.display = "none";
             simulationTitle.style.display = "none";
+            homeButton.style.display = "none";
         }       
     }
 

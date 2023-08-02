@@ -1,0 +1,44 @@
+.simulation-options-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*border-style: solid;*/
+    /*border-color: #ff0000;*/
+}
+
+
+.simulation-option {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+    background-color: #000000;/*#003456;*/
+    border-radius: 45px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 1.0);
+}
+
+.simulation-option img {
+    width: 300px; /* Set the width of the image as desired */
+    height: 300px; /* Set the height of the image as desired */
+    border-radius: 45px; /* To make the image circular, use border-radius: 50%; */
+}
+
+.simulation-text {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;  
+    margin-top: 20px;
+}
