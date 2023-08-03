@@ -5,8 +5,6 @@
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    /*border-style: solid;*/
-    /*border-color: #ff0000;*/
 }
 
 
@@ -21,12 +19,20 @@
     background-color: #000000;/*#003456;*/
     border-radius: 45px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 1.0);
+    transition: background-color 0.3s ease;
+}
+
+.simulation-option:hover {
+    cursor: pointer;
+    background-color: #090909;
+    transform: scale(1.01);
 }
 
 .simulation-option img {
-    width: 300px; /* Set the width of the image as desired */
-    height: 300px; /* Set the height of the image as desired */
-    border-radius: 45px; /* To make the image circular, use border-radius: 50%; */
+    width: 300px; 
+    height: 300px;
+    border-radius: 45px;
+    margin-bottom: 5px;
 }
 
 .simulation-text {
@@ -40,5 +46,6 @@
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s;  
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }

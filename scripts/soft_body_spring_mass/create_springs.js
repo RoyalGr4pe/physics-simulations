@@ -58,10 +58,10 @@ function createSprings(jointsGrid, springConstant, springRestingLength) {
                        [jointsGrid[i][j], jointsGrid[row][col]],
                        [jointsGrid[i][j].getPosition(), jointsGrid[row][col].getPosition()],
                        [jointsGrid[i][j].getID(), jointsGrid[row][col].getID()]
-                       )
+                    )
                        
-                       jointsGrid[i][j].setSpring(spring);
-                       jointsGrid[row][col].setSpring(spring);
+                    jointsGrid[i][j].setSpring(spring);
+                    jointsGrid[row][col].setSpring(spring);
 
                     springs.push(spring);
                     springID++; 

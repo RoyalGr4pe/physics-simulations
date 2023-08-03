@@ -27,9 +27,9 @@ function createJoints(numberOfJoints, springRestingLength, jointMass, jointRadiu
                 jointID, 
                 jointMass,
                 jointRadius,
-                [x, y],
-                [0, 0],
-                [0, 0]
+                [x, y], // Position
+                [0, 0], // Velocity
+                [0, 0]  // Acceleration
             )
             joint.setForceDueToGravity();
 

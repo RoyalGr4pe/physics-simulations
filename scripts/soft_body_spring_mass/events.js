@@ -58,7 +58,7 @@ function resetSketchEvent() {
     jointsRadius,
     simulationContainer.clientWidth, 
     simulationContainer.clientHeight
-    );
+  );
     
   let centreOfGrid = calculateCentreOfGrid(jointsGrid, rotationAngle);
 

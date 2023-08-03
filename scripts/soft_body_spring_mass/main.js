@@ -1,25 +1,11 @@
-let canvasWidth;
-let canvas;
-
-// Containers
-let mainContainer;
-let simulationContainer;
-let sideBarContainer;
-let sliderContainer;
-
-
-// Elements
-let simulationTitle;
-let sliderLabels;
-let homeButton;
-
 let jointsGrid;
 let lastFrame;
 let deltaTime;
 let isMenuOpen = false;
-let minWindowWidth = 800;
 
 // Sliders
+let sliderContainer;
+let sliderLabels;
 let springConstantSlider;
 let numberOfJointsSlider;
 let startingAngleSlider;
@@ -28,6 +14,7 @@ let jointMassSlider;
 let jointRadiusSlider;
 let simulationSpeedSlider;
 let gravitySlider;
+
 
 // Slider values
 let springConstantSliderValue;
@@ -39,22 +26,19 @@ let jointRadiusSliderValue;
 let simulationSpeedSliderValue;
 let gravitySliderValue;
 
+// Constants
+let springWidth = 3;
+let boundaryDampingCoefficient = 0.5;
+let springDampingCoefficient = 1.0;
+let coefficientOfRestitution = 1.0;
+
 
 function setup() {
-  mainContainer = document.getElementById("main-container");
-  mainContainer.style.gridTemplateColumns = "20% 80%";
-
-  simulationContainer = document.getElementById("simulation-container");
-  sideBarContainer = document.getElementById("side-bar-container");
-
-  simulationTitle = document.getElementById("simulation-title-div");
+  findGeneralElements();
+  
+  // Sliders
   sliderContainer = document.getElementById("settings-container");
   sliderLabels = document.getElementsByClassName("slider-label");
-  homeButton = document.getElementById("home-button");
-  homeButton.style.display = "none";
-
-
-  // Sliders
   springConstantSlider = document.getElementById("spring-constant-range");
   numberOfJointsSlider = document.getElementById("number-of-joints-range");
   startingAngleSlider = document.getElementById("starting-angle-range");
@@ -74,9 +58,8 @@ function setup() {
   simulationSpeedSliderValue = document.getElementById("simulation-speed-value");
   gravitySliderValue = document.getElementById("gravity-value");
 
-  canvas = createCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight, WEBGL);
+  let canvas = createCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight, WEBGL);
   canvas.parent(simulationContainer);
-
   lastFrame = new Date().getTime();
 
   resetSketchEvent();
@@ -117,4 +100,3 @@ function renderJointsAndSprings() {
     }
   }
 }
-
