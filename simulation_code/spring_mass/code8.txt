@@ -1,0 +1,65 @@
+    /*-------------------------------------------------------------------*/
+    /* Joint collisions                                                  */
+    /*-------------------------------------------------------------------*/
+
+
+    collidedWithBottomOfWindow(boundaryBottom) {
+        // Floor collision detector
+        if (this.position[1] - this.radius <= boundaryBottom) {
+            return true;
+        }
+    }
+    
+    
+    collidedWithTopOfWindow(boundaryTop) {
+        // Roof collision detector
+        if (this.position[1] + this.radius >= boundaryTop) {
+            return true;
+        }
+    }
+    
+    
+    collidedWithLeftOfWindow(boundaryLeft) {
+        // Left window collision detector
+        if (this.position[0] - this.radius <= boundaryLeft) {
+            return true;
+        }
+    }
+    
+    
+    collidedWithRightOfWindow(boundaryRight) {
+        // Right window collision detector
+        if (this.position[0] + this.radius >= boundaryRight) {
+            return true;
+        }
+    }
+    
+    
+    applyBoundaryImpulseX() {
+        this.velocity[0] *= -boundaryDampingCoefficient;
+    }
+    
+    
+    applyBoundaryImpulseY() {
+        this.velocity[1] *= -boundaryDampingCoefficient;
+    }
+    
+    
+    boundaryCollisionHandler(boundaryLeft, boundaryRight, boundaryBottom, boundaryTop) {
+        if (this.collidedWithLeftOfWindow(boundaryLeft)) {
+            this.position[0] = boundaryLeft + this.radius;
+            this.applyBoundaryImpulseX();
+        } 
+        else if (this.collidedWithRightOfWindow(boundaryRight)) {
+            this.position[0] = boundaryRight - this.radius;
+            this.applyBoundaryImpulseX();
+        } 
+        else if (this.collidedWithBottomOfWindow(boundaryBottom)) {
+            this.position[1] = boundaryBottom + this.radius;
+            this.applyBoundaryImpulseY();
+        } 
+        else if (this.collidedWithTopOfWindow(boundaryTop)) {
+            this.position[1] = boundaryTop - this.radius
+            this.applyBoundaryImpulseY();
+        }
+    }

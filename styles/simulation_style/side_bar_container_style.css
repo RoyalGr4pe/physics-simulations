@@ -25,7 +25,7 @@
     grid-row-end: 2;
     color: #ffffff;
     text-align: center;
-    font-size: 24px;
+    font-family: var(--custom-font);
     margin-bottom: 20px;
     cursor: pointer;
     text-shadow: 0px 0px 30px black;

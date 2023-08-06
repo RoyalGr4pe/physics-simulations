@@ -34,7 +34,7 @@ function adjustElementsSize() {
 
 
     if (windowWidth >= minWindowWidth) {
-        simulationFontToWindowRatio = 1/80;
+        simulationFontToWindowRatio = 1/70;
         sliderLabelFontToWindowRatio = 1/96;
     } 
     else if (windowWidth < minWindowWidth) {

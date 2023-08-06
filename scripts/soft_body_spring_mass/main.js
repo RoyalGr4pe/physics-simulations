@@ -28,9 +28,9 @@ let gravitySliderValue;
 
 // Constants
 let springWidth = 3;
-let boundaryDampingCoefficient = 0.5;
-let springDampingCoefficient = 1.0;
-let coefficientOfRestitution = 1.0;
+let boundaryDampingCoefficient = 0.95;
+let springDampingCoefficient = 0.95;
+let coefficientOfRestitution = 0.95;
 
 
 function setup() {

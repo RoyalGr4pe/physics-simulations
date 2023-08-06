@@ -64,7 +64,10 @@ function resetSketchEvent() {
 
   for (joints of jointsGrid) {
     for (joint of joints) {
-      let positionAfterRotation = calculatePositionAfterRotation(joint.getPosition(), rotationAngle, centreOfGrid);
+      let pos = joint.getPosition();
+
+      let matrixPositionAfterRotation = rotate2x2Matrix([[pos[0]], [pos[1]]], rotationAngle, centreOfGrid)      //calculatePositionAfterRotation(joint.getPosition(), rotationAngle, centreOfGrid);
+      let positionAfterRotation = [matrixPositionAfterRotation[0][0], matrixPositionAfterRotation[1][0]]
       joint.setPosition(positionAfterRotation);
     }
   }

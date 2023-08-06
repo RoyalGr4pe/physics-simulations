@@ -1,0 +1,26 @@
+// Global Variables
+let simulationContainer;
+
+// Slider Declaration
+...
+
+// Constants
+let fps = 60;
+let springWidth = 3;
+let boundaryDampingCoefficient = 0.95;
+let springDampingCoefficient = 0.95;
+let coefficientOfRestitution = 0.95;
+
+function setup() {
+    simulationContainer = document.getElementById("simulation-container");
+  
+    // Locate Sliders
+    ...
+
+    let canvas = createCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight, WEBGL);
+    canvas.parent(simulationContainer);
+    lastFrame = new Date().getTime();
+
+    // Creates joints (mass) and springs
+    resetSketchEvent();
+}

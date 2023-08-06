@@ -43,6 +43,7 @@
     text-decoration: none;
     color: #555;
     font-size: 16px;
+    font-family: var(--custom-font);
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s;  
