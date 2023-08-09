@@ -74,9 +74,3 @@ function resetSketchEvent() {
 
   springs = createSprings(jointsGrid, springConstant, springLength);
 }
-
-
-function goToHomeEvent() {
-  // Use window.location to navigate to the index.html page
-  window.location.href = "../index.html"; 
-}
