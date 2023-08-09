@@ -5,12 +5,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-style: solid;
+    border-color: #ffffff;
 }
 
 .home-page-title {
     font-family: var(--custom-font);
     color: #ffffff;
     font-size: 48px;
+    text-align: center;
     text-shadow: 0px 8px 8px rgba(0, 0, 0, 1.0);
     text-transform: uppercase;
 }
@@ -19,6 +22,7 @@
     font-family: var(--custom-font);
     font-size: 18px;
     color: #ccc;
+    text-align: center;
     margin-bottom: 30px;
     text-shadow: 0px 8px 16px rgba(0, 0, 0, 1.0);
 }

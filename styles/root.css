@@ -1,3 +1,15 @@
 :root {
     --custom-font: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --sim-option-size-1: 350px;
+    --sim-option-size-2: 300px;
+    --sim-option-size-3: 250px;
+    --sim-option-size-4: 200px;
+    --sim-option-size-5: 150px;
+    --sim-option-size-6: 120px;
+    --sim-img-option-size-1: 300px;
+    --sim-img-option-size-2: 257px;
+    --sim-img-option-size-3: 214px;
+    --sim-img-option-size-4: 171px;
+    --sim-img-option-size-5: 129px;
+    --sim-img-option-size-6: 103px;
 }

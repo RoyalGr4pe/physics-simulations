@@ -5,6 +5,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-style: solid;
+    border-color: #00ffff;
 }
 
 .top-bar-button {

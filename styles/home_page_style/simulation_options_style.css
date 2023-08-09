@@ -4,13 +4,14 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    border-style: solid;
+    border-color: #ff00ff;
 }
 
 
 .simulation-option {
-    width: 350px;
-    height: 350px;
+    width: var(--sim-option-size-1);
+    height: var(--sim-option-size-1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,8 +30,8 @@
 }
 
 .simulation-option img {
-    width: 300px; 
-    height: 300px;
+    width: var(--sim-img-option-size-1); 
+    height: var(--sim-img-option-size-1); 
     border-radius: 45px;
     margin-bottom: 5px;
 }
