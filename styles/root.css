@@ -12,4 +12,12 @@
     --sim-img-option-size-4: 171px;
     --sim-img-option-size-5: 129px;
     --sim-img-option-size-6: 103px;
+    --hex-white: #ffffff;
+    --hex-black: #000000;
+    --hex-dark-gray: #090909;
+    --hex-off-white: #cccccc;
+    --hex-light-blue: #0099CC;
+    --hex-light-orange: #f8b195;
+    --hex-dark-navy-blue: #0e131c;
+    --rgba-black: rgba(0, 0, 0, 1.0);
 }

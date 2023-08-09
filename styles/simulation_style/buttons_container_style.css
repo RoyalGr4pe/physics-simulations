@@ -21,7 +21,7 @@
     position: absolute;
     height: 4px;
     width: 100%;
-    background-color: #ffffff; 
+    background-color: var(--hex-white); 
     top: 50%;
     margin-top: -2px;
 }
@@ -32,7 +32,7 @@
     display: block;
     height: 4px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: var(--hex-white);
     position: absolute;
 }
 

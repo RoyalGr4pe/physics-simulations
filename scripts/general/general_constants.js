@@ -7,5 +7,7 @@ let pixelConversionConstant = centimetreConversion / pixelLength;
 let fps = 60;
 
 // Background configuration
-let backgroundColourHex = "#27445C";
+const backgroundColourPicker = localStorage.getItem("simulation-background-colour");
+console.log(backgroundColourPicker);
+let backgroundColourHex = backgroundColourPicker;
 let minWindowWidth = 800;

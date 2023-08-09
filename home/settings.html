@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="/styles/home_page_style/simulation_options_style.css">
     <link rel="stylesheet" href="/styles/home_page_style/title_style.css">
     <link rel="stylesheet" href="/styles/home_page_style/top_bar_style.css">
+    <link rel="stylesheet" href="/styles/home_page_style/settings_options_style.css">
     <link rel="stylesheet" href="/styles/media_queries.css">
+    <script type="text/javascript" src="/scripts/general/general_constants.js"></script>
+
     <title>Simulation Settings</title>
 </head>
 <body>
@@ -23,6 +26,28 @@
         <div class="title-container">
             <h1 class="home-page-title">Settings</h1>
             <p class="home-page-info-title">Customize your preferences and settings here.</p>
+        </div>
+
+        <div class="settings-container">
+            <div class="settings-option-container">
+                <label class="settings-option">Simulation Background Colour</label>
+                <input type="color" id="colour-picker" class="colour-input" value="#27445C">
+                <script>
+                    const colourPicker = document.getElementById("colour-picker");
+
+                    // Retrieve stored color from localStorage and set as initial value
+                    const storedColour = localStorage.getItem('simulation-background-colour');
+                    if (storedColour) {
+                        colourPicker.value = storedColour;
+                    }
+
+                    colourPicker.addEventListener("input", (event) => {
+                        const selectedColour = event.target.value;
+                        localStorage.setItem("simulation-background-colour", selectedColour);
+                        console.log(selectedColour)
+                    });
+                </script>
+            </div>
         </div>
 
 </body>

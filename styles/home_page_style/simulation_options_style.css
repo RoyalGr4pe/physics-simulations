@@ -15,7 +15,7 @@
     align-items: center;
     text-align: center;
     margin: 30px;
-    background-color: #000000;/*#003456;*/
+    background-color: var(--hex-black);
     border-radius: 45px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 1.0);
     transition: background-color 0.3s ease;
@@ -23,7 +23,7 @@
 
 .simulation-option:hover {
     cursor: pointer;
-    background-color: #090909;
+    background-color: var(--hex-dark-gray);
     transform: scale(1.01);
 }
 
@@ -37,7 +37,7 @@
 .simulation-text {
     display: block;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--hex-off-white);
     text-align: center;
     text-decoration: none;
     color: #555;

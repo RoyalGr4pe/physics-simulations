@@ -36,7 +36,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
     background-color: transparent;
 
     &:focus {
-      outline-color: #f8b195;
+      outline-color: var(--hex-light-orange);
     }
 }
 
@@ -92,7 +92,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    border: 2px solid #f8b195;
+    border: 2px solid var(--hex-light-orange);
     border-radius: 50%;
     height: 20px;
     width: 20px;
@@ -112,7 +112,7 @@ https://codepen.io/nerdy-girl/pen/pooyRmW
 .slider::-moz-range-thumb {
     -moz-appearance: none;
     appearance: none;
-    border: 2px solid #f8b195;
+    border: 2px solid var(--hex-light-orange);
     border-radius: 50%;
     height: 20px;
     width: 20px;

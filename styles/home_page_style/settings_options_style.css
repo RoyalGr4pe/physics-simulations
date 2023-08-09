@@ -1,0 +1,29 @@
+.settings-container {
+
+}
+
+.settings-option-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-option {
+    color: var(--hex-white);
+    font-size: 16px;
+    font-family: var(--custom-font);
+}
+
+.colour-input {
+    width: 70px;
+    height: 30px;
+    border: none;
+    background-color: var(--hex-white);
+    transition: background-color 0.3s;
+  }
+
+.colour-input:hover {
+    background-color: var(--hex-off-white);
+}
