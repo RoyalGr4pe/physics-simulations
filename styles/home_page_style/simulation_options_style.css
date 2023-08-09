@@ -4,8 +4,6 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
-    border-style: solid;
-    border-color: #ff00ff;
 }
 
 
