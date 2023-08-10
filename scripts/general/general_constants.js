@@ -7,7 +7,7 @@ let pixelConversionConstant = centimetreConversion / pixelLength;
 let fps = 60;
 
 // Background configuration
-const backgroundColourPicker = localStorage.getItem("simulation-background-colour");
+let backgroundColourPicker = localStorage.getItem("simulation-background-colour");
 
 if (backgroundColourPicker === null) {
     backgroundColourPicker = "#0e131c";
