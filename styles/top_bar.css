@@ -9,19 +9,19 @@
 
 .top-bar-button {
     text-decoration: none;
-    color: var(--hex-white);
+    color: var(--top-bar-buttons-colour);
     font-size: 20px;
     font-family: var(--custom-font);
-    text-shadow: 0px 8px 8px var(rgba-black);
+    text-shadow: 0px 8px 8px var(--hex-black);
     padding: 14px 25px;
     transition: color 0.3s;
 }
 
 .top-bar-button:hover {
-    color: var(--hex-off-white);
+    color: var(--top-bar-buttons-hover-colour);
 }
 
 .top-bar-button.active {
     text-decoration: underline;
-    text-decoration-color: var(--hex-light-blue);
+    text-decoration-color: var(--top-bar-underline-colour);
 }

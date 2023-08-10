@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/root.css">
+    <link rel="stylesheet" href="/styles/title.css">
+    <link rel="stylesheet" href="/styles/top_bar.css">
+    <link rel="stylesheet" href="/simulation_code/styles/main_container.css">
+    <link rel="stylesheet" href="/simulation_code/styles/code_block.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script type="text/javascript" src="/scripts/constants.js"></script>
+    
+    <title>Spring Mass Code</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="top-bar-container">
+            <a class="top-bar-button" href="/home/home.html">Home</a>
+            <a class="top-bar-button" href="/simulation_code/soft_body_spring_mass/code_explaination.html">Code</a>
+            <a class="top-bar-button" href="https://github.com/RoyalGr4pe/simulation-labs/tree/main/scripts/soft_body_spring_mass">Github</a>
+            <a class="top-bar-button" href="/home/settings.html">Settings</a>
+        </div>
+        <script type="text/javascript" src="/home/scripts/main.js"></script>
+
+        <div class="title-container">
+            <h1 class="page-title">Spring Mass System</h1>
+            <p class="page-info-title">This simulation was programmed using p5.js and WebGL</p>
+        </div>
+        
+        <div class="code-blocks-container">
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    This is the p5.js setup function. Here we locate the simulation container and create a p5 canvas using the width and height of the container. The WebGL parameter inside the createCanvas function is used to tell p5 we want to use WebGL. At then end of this function we call resetSketchEvent() which causes the simulation to start.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    This is the p5.js draw function. This function gets called every frame. The deltaTime variable is the time between the last frame and now. Since p5 has its origin in the middle of the window we have to translate to the bottom left. These two functions (updateJointsAndSprings, renderJointsAndSprings) will be explained further down.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    Below is the resetSketchEvent(). As stated above this function causes the simulation to start. It will also be called when we press the reset button. Here you can see we call createJoints() and then update the joints position based off the startingRotationSlider value. Note that (createJoints(), createSprings(), calculateCentreOfGrid(), rotate2x2Matrix()) are internal functions that do not belong to p5 and will be explained later.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    Here is the createJoints() function. To position the whole shape in the middle of the screen we have to calculate the bottom left joints position based off the size of the shape. We then loop through the rows and columns and create the joints each with an offset of springRestingLength from each other.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>       
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    Here is the createSprings() function along with springAlreadyAttached() and isValidJointIndex() which createSprings() uses. The way we attached a spring between to joints is to use the neighbourOffSets array. Looping through this array we find the position of the joints that surround the current joint. Using isValidJointIndex() we can do a check to see if there is actually a joint in that position. For example a joint in the top left corner won't have neighbouring joints above it or to the left of it. In the same if statement we use springAlreadyAttached() as it says it will see if a spring is already attached between the two joints.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    The main part of the Spring class to pay attention to is the calculateSpringForce(), here we calculate the extension and with that the force the spring exerts on each of the joints its attached to. In the update function we apply these forces in opposite directions to the joints.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>  
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    In this part of the Joint class where we can run a few updaters on the Joint. As you can see at the bottom of the update function we reset the spring force as each frame we start with zero force and the forces accumulate throughout the frame and at the end we update the acceleration, velocity and position. If we did not do this, the forces on the joint would continue to increase to very large values. 
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>  
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    The rest of the Joint class includes collision detection functions (`<b>collidedWithBottomOfWindow`</b>, `<b>collidedWithTopOfWindow</b>`, `<b>collidedWithLeftOfWindow</b>`, `<b>collidedWithRightOfWindow</b>`) that check if the object collides with the corresponding boundary. It also provides functions (`<b>applyBoundaryImpulseX</b>` and `<b>applyBoundaryImpulseY</b>`) to apply a damping effect on the object's velocity when it collides with the window boundary. The `<b>boundaryCollisionHandler</b>` function uses these collision detection functions to handle collisions and updates the object's position and velocity accordingly to prevent it from moving outside the window boundaries.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>  
+        </div>
+        <script type="text/javascript" src="/simulation_code/scripts/main.js"></script>
+        <link rel="stylesheet" href="/styles/media_queries.css">
+</div>
+</body>
+</html>

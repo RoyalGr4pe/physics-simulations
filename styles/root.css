@@ -14,10 +14,20 @@
     --sim-img-option-size-6: 103px;
     --hex-white: #ffffff;
     --hex-black: #000000;
-    --hex-dark-gray: #090909;
+    --hex-grey: #555555;
+    --hex-dark-grey: #090909;
     --hex-off-white: #cccccc;
     --hex-light-blue: #0099CC;
     --hex-light-orange: #f8b195;
     --hex-dark-navy-blue: #0e131c;
     --rgba-black: rgba(0, 0, 0, 1.0);
+    --background-colour: var(--hex-dark-navy-blue);
+    --title-colour: var(--hex-white);
+    --title-info-colour: var(--hex-off-white);
+    --top-bar-buttons-colour: var(--hex-white);
+    --top-bar-underline-colour: var(--hex-light-blue);
+    --top-bar-buttons-hover-colour: var(--hex-off-white);
+    --sim-options-background-colour: var(--hex-black);
+    --sim-options-background-hover-colour: var(--hex-dark-grey);
+    --sim-option-title-colour: var(--hex-grey)
 }

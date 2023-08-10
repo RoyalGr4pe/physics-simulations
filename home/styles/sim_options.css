@@ -6,7 +6,6 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-
 .simulation-option {
     width: var(--sim-option-size-1);
     height: var(--sim-option-size-1);
@@ -15,15 +14,15 @@
     align-items: center;
     text-align: center;
     margin: 30px;
-    background-color: var(--hex-black);
+    background-color: var(--sim-options-background-colour);
     border-radius: 45px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 1.0);
+    box-shadow: 10px 10px 24px var(--hex-black);;
     transition: background-color 0.3s ease;
 }
 
 .simulation-option:hover {
     cursor: pointer;
-    background-color: var(--hex-dark-gray);
+    background-color: var(--sim-options-background-hover-colour);
     transform: scale(1.01);
 }
 
@@ -40,7 +39,7 @@
     border: 1px solid var(--hex-off-white);
     text-align: center;
     text-decoration: none;
-    color: #555;
+    color: var(--sim-option-title-colour);
     font-size: 16px;
     font-family: var(--custom-font);
     font-weight: bold;
@@ -48,4 +47,8 @@
     transition: background-color 0.3s;  
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.disabled {
+    opacity: 0.4;
 }

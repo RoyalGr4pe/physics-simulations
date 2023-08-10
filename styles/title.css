@@ -6,20 +6,20 @@
     justify-content: center;
 }
 
-.home-page-title {
+.page-title {
     font-family: var(--custom-font);
-    color: var(--hex-white);
+    color: var(--title-colour);
     font-size: 48px;
     text-align: center;
-    text-shadow: 0px 8px 8px var(rgba-black);
+    text-shadow: 0px 8px 8px var(--hex-black);
     text-transform: uppercase;
 }
 
-.home-page-info-title {
+.page-info-title {
     font-family: var(--custom-font);
     font-size: 18px;
-    color: var(--hex-off-white);
+    color: var(--title-info-colour);
     text-align: center;
     margin-bottom: 30px;
-    text-shadow: 0px 8px 16px var(rgba-black);
+    text-shadow: 0px 8px 8px var(--hex-black);
 }

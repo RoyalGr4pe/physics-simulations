@@ -18,6 +18,10 @@
         width: var(--sim-img-option-size-2);
         height: var(--sim-img-option-size-2);
     }
+
+    .code-explaination {
+        font-size: 16px;
+    }
 }
 
 
@@ -25,15 +29,19 @@
     .simulation-options-container {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .code-block {
+        font-size: 12px;
+    }
 }
 
 
-@media (max-width: 695px) {
-    .home-page-title {
+@media (max-width: 710px) {
+    .page-title {
         font-size: 35px;
     }
 
-    .home-page-info-title {
+    .page-info-title {
         font-size: 15px;
     }
 
@@ -55,14 +63,22 @@
         font-size: 12px;
         padding: 9px;
     }
+
+    .code-block-container {
+        overflow-x: scroll;
+    }
+
+    .code-explaination {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 550px) {
-    .home-page-title {
+    .page-title {
         font-size: 25px;
     }
 
-    .home-page-info-title {
+    .page-info-title {
         font-size: 12px;
     }
 
@@ -79,6 +95,10 @@
     .simulation-text {
         font-size: 10px;
         padding: 8px;
+    }
+
+    .top-bar-button {
+        padding: 14px 20px;
     }
 }
 
@@ -98,6 +118,11 @@
     .simulation-text {
         font-size: 10px;
         padding: 8px;
+    }
+
+    .top-bar-button {
+        font-size: 16px;
+        padding: 14px 16px;
     }
 }
 
@@ -120,19 +145,13 @@
     }
 
     .top-bar-button {
-        font-size: 15px;
+        padding: 14px 14px;
     }
 }
 
 @media (max-width: 290px) {
     .top-bar-button {
-        font-size: 12px;
-    }   
-}
-
-@media (max-width: 290px) {
-    .top-bar-button {
-        font-size: 12px;
+        padding: 14px 12px;
     }   
 }
 
@@ -155,6 +174,44 @@
     }
 
     .top-bar-button {
-        font-size: 10px;
+        padding: 14px 8px;
+        font-size: 13px;
     }   
+}
+
+@media (max-width: 230px) {
+    body, html {
+        overflow-x: auto;
+    }
+
+    .main-container {
+        width: 90%;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .top-bar-button {
+        padding: 14px 6px;
+        font-size: 12px;
+    }      
+}
+
+@media (max-width: 200px) {
+    .main-container {
+        width: 95%;
+    }
+
+    .page-title {
+        font-size: 18px;
+    }
+
+    .page-info-title {
+        font-size: 10px;
+    }
+
+    .top-bar-button {
+        font-size: 10px;
+    }  
 }
