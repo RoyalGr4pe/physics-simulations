@@ -10,7 +10,7 @@ let fps = 60;
 let backgroundColourPicker = localStorage.getItem("simulation-background-colour");
 
 if (backgroundColourPicker === null) {
-    backgroundColourPicker = "#0e131c";
+    backgroundColourPicker = "#27445C";
 }
 
 let backgroundColourHex = backgroundColourPicker;
