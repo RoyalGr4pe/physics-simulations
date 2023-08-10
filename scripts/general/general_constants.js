@@ -8,6 +8,10 @@ let fps = 60;
 
 // Background configuration
 const backgroundColourPicker = localStorage.getItem("simulation-background-colour");
-console.log(backgroundColourPicker);
+
+if (backgroundColourPicker === null) {
+    backgroundColourPicker = "#0e131c";
+}
+
 let backgroundColourHex = backgroundColourPicker;
 let minWindowWidth = 800;
