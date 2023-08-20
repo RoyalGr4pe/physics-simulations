@@ -2,13 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/root.css">
-    <link rel="stylesheet" href="/styles/title.css">
-    <link rel="stylesheet" href="/styles/top_bar.css">
-    <link rel="stylesheet" href="/home/styles/main_container.css">
-    <link rel="stylesheet" href="/home/styles/sim_options.css">
-    <link rel="stylesheet" href="/styles/media_queries.css">
+    <link rel="stylesheet" href="/global-shared-styles/root.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-titles-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-selectors-styles.css">
+    <link rel="stylesheet" href="local-styles/main-container-styles.css">
+    <link rel="stylesheet" href="local-styles/simulation-options-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/media-queries.css">
+    
     <title>Simulations | Code</title>
+    <link rel="icon" type="image/x-icon" href="/global-shared-assets/images/icons/icon.ico">
 </head>
 <body>
     <div id="main" class="main-container">
@@ -18,19 +20,20 @@
             <a class="top-bar-button" href="https://github.com/RoyalGr4pe/simulation-labs/">Github</a>
             <a class="top-bar-button" href="/home/settings.html">Settings</a>
         </div>
-        <script type="text/javascript" src="/home/scripts/main.js"></script>
+        <script type="text/javascript" src="/global-shared-scripts/global-page-change-event.js"></script>
 
-        
-        
         <div class="title-container">
             <h1 class="page-title">Simulation Code</h1>
             <p class="page-info-title">Learn and understand how to build these simulations</p>
         </div>
 
         <div class="simulation-options-container">
-            <div class="simulation-option" onclick="location.href='/simulation_code/soft_body_spring_mass/code_explaination.html'">
-                <a class="simulation-text" href="/simulation_code/soft_body_spring_mass/code_explaination.html">Spring Mass System Code</a>
-                <img src="/assets/images/simulation_code_display_images/soft_body_spring_mass.png" alt="Simulation Image">
+            <div class="simulation-option" onclick="location.href='/simulations-explained/soft-body-spring-mass/explaination.html'">
+                <a class="simulation-text" href="/simulations-explained/soft-body-spring-mass/explaination.html">Spring Mass System Code</a>
+                <img src="/global-shared-assets/images/simulation-explainations-option-images/soft-body-spring-mass.png" alt="Simulation Image">
+            </div>
+            <div class="simulation-option disabled" onclick="return false;">
+                <a class="simulation-text" href="/simulation_code/spring_mass_soft_body_code.html">Gravitational Attractors Code</a>
             </div>
             <div class="simulation-option disabled" onclick="return false;">
                 <a class="simulation-text" href="/simulation_code/soft_body_spring_mass/code_explaination.html">Pendulums Code</a>
@@ -43,9 +46,6 @@
             </div>
             <div class="simulation-option disabled" onclick="return false;">
                 <a class="simulation-text" href="/simulation_code/spring_mass_soft_body_code.html">Planetary Orbits Code</a>
-            </div>
-            <div class="simulation-option disabled" onclick="return false;">
-                <a class="simulation-text" href="/simulation_code/spring_mass_soft_body_code.html">Gravitational Attractors Code</a>
             </div>
             <div class="simulation-option disabled" onclick="return false;">
                 <a class="simulation-text" href="/simulation_code/spring_mass_soft_body_code.html">Magnetism Code</a>

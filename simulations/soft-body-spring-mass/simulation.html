@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/global-shared-styles/root.css">
+  <link rel="stylesheet" href="/simulations/local-shared-styles/main-container-styles.css">
+  <link rel="stylesheet" href="/simulations/local-shared-styles/side-bar-styles.css">
+  <link rel="stylesheet" href="/simulations/local-shared-styles/slider-styles.css">
+  <!-- Include p5.js library -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script type="text/javascript" src="/global-shared-scripts/global-constants.js"></script>
+  <script type="text/javascript" src="/global-shared-scripts/global-response-elements.js"></script>
+  <script type="text/javascript" src="/global-shared-scripts/global-maths.js"></script>
+  <script type="text/javascript" src="/simulations/local-shared-scripts/shared-elements.js"></script>
+  <script type="text/javascript" src="/simulations/local-shared-scripts/shared-events.js"></script>
+  <script type="text/javascript" src="local-scripts/create-joints.js"></script>
+  <script type="text/javascript" src="local-scripts/create-springs.js"></script>
+  <script type="text/javascript" src="local-scripts/local-events.js"></script>
+  <script type="text/javascript" src="local-scripts/local-maths.js"></script>
+  <script type="text/javascript" src="local-scripts/local-updaters.js"></script>
+  <script type="text/javascript" src="local-scripts/local-variables.js"></script>
+  <script type="text/javascript" src="local-scripts/main.js"></script>
+  <script type="text/javascript" src="local-scripts/object-joint.js"></script>
+  <script type="text/javascript" src="local-scripts/object-spring.js"></script>
+
+
+  <title>Soft Body Spring Mass</title>
+  <link rel="icon" type="image/x-icon" href="/global-shared-assets/images/icons/icon.ico">
+</head>
+<body>
+  <div id="main-container" class="main-container">
+    <div id="side-bar-container" class="side-bar-container">
+      <div class="menu-button-container">
+        <button id="menu-button" class="side-bar-menu-button" onclick="toggleMenuButtonEvent()">
+          <span></span>
+        </button>
+      </div>
+
+      <div id="simulation-title-div" class="simulation-title">
+        <hr>
+        <h2 onclick="resetSketchEvent()">Spring Mass System</h2>
+        <hr>
+      </div>    
+
+      <div id="settings-container" class="settings-container">
+        <div class="slider-container">
+          <label class="slider-label">Spring Constant: <span id="spring-constant-value"></span> N/m</label>
+          <input type="range" min="1" max="100" value="25" class="slider" id="spring-constant-range" step="0.1">
+        </div>
+    
+        <div class="slider-container">
+          <label class="slider-label">Number of Joints: <span id="number-of-joints-value"></span></label>
+          <input type="range" min="1" max="512" value="49" class="slider" id="number-of-joints-range" step="1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Starting Angle: <span id="starting-angle-value"></span>°</label>
+          <input type="range" min="0" max="360" value="25" class="slider" id="starting-angle-range" step="1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Spring Length: <span id="spring-length-value"></span> cm</label>
+          <input type="range" min="0.1" max="5" value="2" class="slider" id="spring-length-range" step="0.1">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Joint Mass: <span id="joints-mass-value"></span> kg</label>
+          <input type="range" min="0.01" max="10" value="1" class="slider" id="joints-mass-range" step="0.01">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Joint Radius: <span id="joints-radius-value"></span> cm</label>
+          <input type="range" min="0.01" max="1" value="0.3" class="slider" id="joints-radius-range" step="0.01">
+        </div>
+      
+        <div class="slider-container">
+          <label class="slider-label">Simulation Speed: <span id="simulation-speed-value"></span></label>
+          <input type="range" min="0.1" max="5" value="2" class="slider" id="simulation-speed-range" step="0.1">
+        </div>
+
+        <div class="slider-container">
+          <label class="slider-label">Gravity: <span id="gravity-value"></span> N/kg</label>
+          <input type="range" min="-50" max="50" value="9.8" class="slider" id="gravity-range" step="0.1">
+        </div>
+
+      </div>
+
+      <div id="button-container" class="button-container">
+        <button id="home-button" class="side-bar-button" onclick="goToHomeEvent()">
+          <i class="fas fa-home"></i>
+        </button>
+        <button id="reset-button" class="side-bar-button" onclick="resetSketchEvent()">
+          <i class="fas fa-sync-alt"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <div id="simulation-container" class="simulation-container"></div>
+  </div>
+</body>
+</html>

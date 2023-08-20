@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/root.css">
-    <link rel="stylesheet" href="/styles/title.css">
-    <link rel="stylesheet" href="/styles/top_bar.css">
-    <link rel="stylesheet" href="/home/styles/main_container.css">
-    <link rel="stylesheet" href="/home/styles/sim_options.css">
-    <link rel="stylesheet" href="/styles/media_queries.css">
+    <link rel="stylesheet" href="/global-shared-styles/root.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-titles-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-selectors-styles.css">
+    <link rel="stylesheet" href="local-styles/main-container-styles.css">
+    <link rel="stylesheet" href="local-styles/simulation-options-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/media-queries.css">
+
 
     <title>Simulations | Home</title>
+    <link rel="icon" type="image/x-icon" href="/global-shared-assets/images/icons/icon.ico">
 </head>
 <body>
     <div id="main" class="main-container">
@@ -21,7 +23,7 @@
             <a class="top-bar-button" href="https://github.com/RoyalGr4pe/simulation-labs/">Github</a>
             <a class="top-bar-button" href="/home/settings.html">Settings</a>
         </div>
-        <script type="text/javascript" src="/home/scripts/main.js"></script>
+        <script type="text/javascript" src="/global-shared-scripts/global-page-change-event.js"></script>
         
         <div class="title-container">
             <h1 class="page-title">Simulations</h1>
@@ -29,9 +31,12 @@
         </div>
 
         <div class="simulation-options-container">
-            <div class="simulation-option" onclick="location.href='/simulations/soft_body_spring_mass/simulation.html'">
-                <a class="simulation-text" href="/simulations/spring_mass_soft_body.html">Spring Mass System</a>
-                <img src="/assets/images/simulation_display_images/spring_mass_system.png" alt="Simulation Image">
+            <div class="simulation-option" onclick="location.href='/simulations/soft-body-spring-mass/simulation.html'">
+                <a class="simulation-text" href="/simulations/soft-body-spring-mass/simulation.html">Spring Mass System</a>
+                <img src="/global-shared-assets/images/simulation-options-images/soft-body-spring-mass.png" alt="Simulation Image">
+            </div>
+            <div class="simulation-option" onclick="location.href='/simulations/gravitational-attractors/simulation.html'">
+                <a class="simulation-text" href="/simulations/gravitational-attractors/simulation.html">Gravitational Attractors</a>
             </div>
             <div class="simulation-option disabled" onclick="return false;">
                 <a class="simulation-text" href="/simulations/spring_mass_soft_body.html">Pendulums</a>
@@ -41,9 +46,6 @@
             </div>
             <div class="simulation-option disabled" onclick="return false;">
                 <a class="simulation-text" href="/simulations/spring_mass_soft_body.html">Planetary Orbits</a>
-            </div>
-            <div class="simulation-option disabled" onclick="return false;">
-                <a class="simulation-text" href="/simulations/spring_mass_soft_body.html">Gravitational Attractors</a>
             </div>
             <div class="simulation-option disabled" onclick="return false;">
                 <a class="simulation-text" href="/simulations/spring_mass_soft_body.html">Fluid Dynamics</a>

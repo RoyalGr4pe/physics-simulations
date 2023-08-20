@@ -1,0 +1,118 @@
+.side-bar-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 20% 66% 9%;
+    background-color: var(--hex-dark-navy-blue);
+    box-shadow: 8px 10px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.smooth-side-bar-transition {
+    transition: grid-template-columns 0.1s ease;
+  }
+
+.simulation-title {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    color: var(--hex-white);
+    text-align: center;
+    font-family: var(--custom-font);
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-shadow: 0px 0px 30px var(--hex-black);
+}
+
+.button-container {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    left: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-bar-button {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #dddddd;
+    transition: background-color 0.3s ease;
+    margin: 0 2%;
+}
+
+.side-bar-button i {
+    font-size: 21px;
+    color: var(--hex-white);
+}
+
+.side-bar-button:hover {
+    background-color: #101010;
+}
+
+.menu-button-container {
+    height: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-bar-menu-button {
+    margin-top: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    background: transparent; 
+    border: none;
+}
+
+.side-bar-menu-button span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: var(--hex-white); 
+    top: 50%;
+    margin-top: -2px;
+}
+
+.side-bar-menu-button span:before,
+.side-bar-menu-button span:after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: var(--hex-white);
+    position: absolute;
+}
+
+.side-bar-menu-button span:before {
+    top: -10px;
+}
+
+.side-bar-menu-button span:after {
+    bottom: -10px;
+}
+
+.side-bar-menu-button:hover {
+    top: -1px;
+}

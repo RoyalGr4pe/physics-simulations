@@ -2,16 +2,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/root.css">
-    <link rel="stylesheet" href="/styles/title.css">
-    <link rel="stylesheet" href="/styles/top_bar.css">
-    <link rel="stylesheet" href="/home/styles/main_container.css">
-    <link rel="stylesheet" href="/home/styles/sim_options.css">
-    <link rel="stylesheet" href="/home/styles/settings.css">
-    <link rel="stylesheet" href="/styles/media_queries.css">
-    <script type="text/javascript" src="/scripts/general/general_constants.js"></script>
+    <link rel="stylesheet" href="/global-shared-styles/root.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-titles-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-selectors-styles.css">
+    <link rel="stylesheet" href="local-styles/main-container-styles.css">
+    <link rel="stylesheet" href="local-styles/simulation-options-styles.css">
+    <link rel="stylesheet" href="local-styles/settings-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/media-queries.css">
+
 
     <title>Simulations | Settings</title>
+    <link rel="icon" type="image/x-icon" href="/global-shared-assets/images/icons/icon.ico">
 </head>
 <body>
     <div id="main" class="main-container">
@@ -21,7 +22,7 @@
             <a class="top-bar-button" href="https://github.com/RoyalGr4pe/simulation-labs/">Github</a>
             <a class="top-bar-button" href="/home/settings.html">Settings</a>
         </div>
-        <script type="text/javascript" src="/home/scripts/main.js"></script>
+        <script type="text/javascript" src="/global-shared-scripts/global-page-change-event.js"></script>
         
         <div class="title-container">
             <h1 class="page-title">Settings</h1>
@@ -32,7 +33,7 @@
             <div class="settings-option-container">
                 <label class="settings-option">Simulation Background Colour</label>
                 <input type="color" id="colour-picker" class="colour-input" value="#27445C">
-                <script type="text/javascript" src="/home/scripts/colour_picker.js"></script>
+                <script type="text/javascript" src="local-scripts/settings-events.js"></script>
             </div>
         </div>
 
