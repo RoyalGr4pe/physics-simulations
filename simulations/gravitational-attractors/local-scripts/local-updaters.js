@@ -1,20 +1,10 @@
-function updatePlanetaryObjects() {
-  for (moon of moons) {
-    moon.update(simulationContainer.clientWidth, simulationContainer.clientHeight);
-    moon.render()
-  }
-  for (planet of planets) {
-    planet.update(simulationContainer.clientWidth, simulationContainer.clientHeight);
-    planet.render()
-  }
-  for (star of stars) {
-    star.update(simulationContainer.clientWidth, simulationContainer.clientHeight);
-    star.render()
-  }
-}
-
 function updateSliderInfo() {
+  auSliderValue.innerHTML = auSlider.value;
   speedSliderValue.innerHTML = speedSlider.value;
+
+  auSlider.oninput = function() {
+    auSliderValue.innerHTML = this.value;
+  }
 
   speedSlider.oninput = function() {
     speedSliderValue.innerHTML = this.value;

@@ -1,8 +1,8 @@
 function setup() {
-  loadSharedElements();
+  loadSimulationSharedElements();
   
   // Sliders
-  sliderContainer = document.getElementById("settings-container");
+  sliderContainer = document.getElementById("sliders-container");
   sliderLabels = document.getElementsByClassName("slider-label");
   springConstantSlider = document.getElementById("spring-constant-range");
   numberOfJointsSlider = document.getElementById("number-of-joints-range");

@@ -20,7 +20,9 @@
   <script type="text/javascript" src="local-scripts/local-events.js"></script>
   <script type="text/javascript" src="local-scripts/local-updaters.js"></script>
   <script type="text/javascript" src="local-scripts/main.js"></script>
-  <script type="text/javascript" src="local-scripts/object-planetary-body.js"></script>
+  <script type="text/javascript" src="local-scripts/object-mover.js"></script>
+  <script type="text/javascript" src="local-scripts/object-attractor.js"></script>
+
 
   <title>Soft Body Spring Mass</title>
   <link rel="icon" type="image/x-icon" href="/global-shared-assets/images/icons/icon.ico">
@@ -41,10 +43,10 @@
         <br>
       </div>    
 
-      <div id="settings-container" class="settings-container">
+      <div id="sliders-container" class="sliders-container">
         <div class="slider-container">
-          <label class="slider-label">AU: <span id="astronomical-value"></span></label>
-          <input type="range" min="0.1" max="5" value="2" class="slider" id="simulation-speed-range" step="0.1">
+          <label class="slider-label">AU: <span id="au-value"></span></label>
+          <input type="range" min="0.1" max="5" value="1" class="slider" id="au-range" step="0.1">
         </div>
         <div class="slider-container">
           <label class="slider-label">Simulation Speed: <span id="simulation-speed-value"></span></label>

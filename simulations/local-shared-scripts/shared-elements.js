@@ -8,7 +8,7 @@ let homeButton;
 let simulationTitle;
 
 
-function loadSharedElements() {
+function loadSimulationSharedElements() {
     mainContainer = document.getElementById("main-container");
     mainContainer.style.gridTemplateColumns = "20% 80%";
   
