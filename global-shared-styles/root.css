@@ -20,6 +20,7 @@
     --hex-light-blue: #0099CC;
     --hex-light-orange: #f8b195;
     --hex-dark-navy-blue: #0e131c;
+    --hex-darker-navy-blue: #14151F;
     --rgba-black: rgba(0, 0, 0, 1.0);
     --background-colour: var(--hex-dark-navy-blue);
     --title-colour: var(--hex-white);

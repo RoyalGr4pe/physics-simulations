@@ -13,15 +13,15 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
   <script type="text/javascript" src="/global-shared-scripts/global-constants.js"></script>
-  <script type="text/javascript" src="/global-shared-scripts/global-response-elements.js"></script>
+  <script type="text/javascript" src="/simulations/local-shared-scripts/shared-updaters.js"></script>
   <script type="text/javascript" src="/simulations/local-shared-scripts/shared-elements.js"></script>
   <script type="text/javascript" src="/simulations/local-shared-scripts/shared-events.js"></script>
   <script type="text/javascript" src="local-scripts/local-variables.js"></script>
   <script type="text/javascript" src="local-scripts/local-events.js"></script>
+  <script type="text/javascript" src="local-scripts/local-maths.js"></script>
   <script type="text/javascript" src="local-scripts/local-updaters.js"></script>
   <script type="text/javascript" src="local-scripts/main.js"></script>
-  <script type="text/javascript" src="local-scripts/object-mover.js"></script>
-  <script type="text/javascript" src="local-scripts/object-attractor.js"></script>
+  <script type="text/javascript" src="local-scripts/object-planetary-body.js"></script>
 
 
   <title>Soft Body Spring Mass</title>
@@ -38,20 +38,27 @@
 
       <div id="simulation-title-div" class="simulation-title">
         <hr>
-        <h2 onclick="">Gravitational Attractors</h2>
+        <h2 onclick="resetSketchEvent()">Gravitational Attractors</h2>
         <hr>
-        <br>
       </div>    
 
-      <div id="sliders-container" class="sliders-container">
+      <div id="local-settings-container" class="local-settings-container">
+
         <div class="slider-container">
-          <label class="slider-label">AU: <span id="au-value"></span></label>
-          <input type="range" min="0.1" max="5" value="1" class="slider" id="au-range" step="0.1">
+          <label class="slider-label">Simulation Speed: <span id="simulation-speed-value" class="slider-value"></span></label>
+          <input type="range" min="0.1" max="10" value="5" class="slider" id="simulation-speed-range" step="0.1">
         </div>
+
         <div class="slider-container">
-          <label class="slider-label">Simulation Speed: <span id="simulation-speed-value"></span></label>
-          <input type="range" min="0.1" max="5" value="2" class="slider" id="simulation-speed-range" step="0.1">
+          <label class="slider-label">Number of Particles: <span id="particle-numbers-value" class="slider-value"></span></label>
+          <input type="range" min="0" max="1000" value="50" class="slider" id="particle-numbers-range" step="1">
         </div>
+
+        <div class="slider-container">
+          <label class="slider-label">Gravitational Constant: <span id="gravitational-constant-value" class="slider-value"></span></label>
+          <input type="range" min="-100" max="100" value="0.01" class="slider" id="gravitational-constant-range" step="0.01">
+        </div>
+
       </div>
 
       <div id="button-container" class="button-container">

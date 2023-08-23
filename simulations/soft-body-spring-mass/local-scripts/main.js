@@ -1,27 +1,6 @@
 function setup() {
   loadSimulationSharedElements();
-  
-  // Sliders
-  sliderContainer = document.getElementById("sliders-container");
-  sliderLabels = document.getElementsByClassName("slider-label");
-  springConstantSlider = document.getElementById("spring-constant-range");
-  numberOfJointsSlider = document.getElementById("number-of-joints-range");
-  startingAngleSlider = document.getElementById("starting-angle-range");
-  springLengthSlider = document.getElementById("spring-length-range");
-  jointMassSlider = document.getElementById("joints-mass-range");
-  jointRadiusSlider = document.getElementById("joints-radius-range");
-  simulationSpeedSlider = document.getElementById("simulation-speed-range");
-  gravitySlider = document.getElementById("gravity-range");
-
-  // Slider values
-  springConstantSliderValue = document.getElementById("spring-constant-value");
-  numberOfJointsSliderValue = document.getElementById("number-of-joints-value");
-  startingAngleSliderValue = document.getElementById("starting-angle-value");
-  springLengthSliderValue = document.getElementById("spring-length-value");
-  jointMassSliderValue = document.getElementById("joints-mass-value");
-  jointRadiusSliderValue = document.getElementById("joints-radius-value");
-  simulationSpeedSliderValue = document.getElementById("simulation-speed-value");
-  gravitySliderValue = document.getElementById("gravity-value");
+  loadSettings();
 
   let canvas = createCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight, WEBGL);
   canvas.parent(simulationContainer);
@@ -41,7 +20,7 @@ function draw() {
   translate(-(simulationContainer.clientWidth)/2, simulationContainer.clientHeight/2, 0);
   scale(1, -1); // Invert the Y-axis
   
-  adjustElementsSize();
+  adjustSharedElementsSize();
   updateSliderInfo();
   updateJointsAndSprings();
   renderJointsAndSprings();

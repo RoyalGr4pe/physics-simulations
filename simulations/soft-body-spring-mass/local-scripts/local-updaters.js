@@ -13,48 +13,4 @@ function updateJointsAndSprings() {
     spring.update();
   }
 }
-
-
-function updateSliderInfo() {
-  springConstantSliderValue.innerHTML = springConstantSlider.value;
-  numberOfJointsSliderValue.innerHTML = numberOfJointsSlider.value;
-  startingAngleSliderValue.innerHTML = startingAngleSlider.value;
-  springLengthSliderValue.innerHTML = springLengthSlider.value;
-  jointMassSliderValue.innerHTML = jointMassSlider.value;
-  jointRadiusSliderValue.innerHTML = jointRadiusSlider.value;
-  simulationSpeedSliderValue.innerHTML = simulationSpeedSlider.value;
-  gravitySliderValue.innerHTML = gravitySlider.value;
-
-  springConstantSlider.oninput = function() {
-    springConstantSliderValue.innerHTML = this.value;
-  }  
-  
-  numberOfJointsSlider.oninput = function() {
-    numberOfJointsSliderValue.innerHTML = this.value;
-  }
-
-  startingAngleSlider.oninput = function() {
-    startingAngleSliderValue.innerHTML = this.value;
-  }
-
-  springLengthSlider.oninput = function() {
-    springLengthSliderValue.innerHTML = this.value;
-  }  
-  
-  jointMassSlider.oninput = function() {
-    jointMassSliderValue.innerHTML = this.value;
-  }
-
-  jointRadiusSlider.oninput = function() {
-    jointRadiusSliderValue.innerHTML = this.value;
-  }
-
-  simulationSpeedSlider.oninput = function() {
-    simulationSpeedSliderValue.innerHTML = this.value;
-  }
-
-  gravitySlider.oninput = function() {
-    gravitySliderValue.innerHTML = this.value;
-  }
-}
   

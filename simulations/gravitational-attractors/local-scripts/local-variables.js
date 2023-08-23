@@ -5,16 +5,15 @@ let lastFrame;
 let deltaTime;
 let isMenuOpen = false;
 
-let sliderContainer;
-let sliderLabels;
+// Sliders
 let speedSlider;
-let speedSliderValue;
-let auSlider;
-let auSliderValue;
+let numberOfParticlesSlider;
+let gravitationalConstantSlider;
 
-let stars = [];
-let planets = [];
-let moons = [];
+// Slider Values
+let speedSliderValue;
+let numberOfParticlesValue;
+let gravitationalConstantValue;
 
 
 // Constants
@@ -26,12 +25,24 @@ const ACC = 4;
 const COLOUR = 5;
 const ORBITING_OBJS = 6;
 
-const G = 6.674 * 10e-11;
-const sunMass = 1.989 * 10e30;
-const earthMass = 5.972 * 10e24;
-const moonMass = 7.348 * 10e22;
 const speedIncrease = 10;
-const earthVelocity = 29783 // m/s
+const coefficientOfRestitution = 0.01;
+const boundaryDampingCoefficient = 0.95;
 
-const AU_TO_METRES = 1.5 * 10e11 // Distance from Earth to Sun in metres
-const AU_TO_PIXEL = 100; // One astronomical unit equals 50 pixels ()
+let planetaryBodies = [];
+
+function loadSettings() {
+    // Sliders
+    speedSlider = document.getElementById("simulation-speed-range");
+    numberOfParticlesSlider = document.getElementById("particle-numbers-range")
+    gravitationalConstantSlider = document.getElementById("gravitational-constant-range");
+
+    // Slider values
+    speedSliderValue = document.getElementById("simulation-speed-value");
+    numberOfParticlesValue = document.getElementById("particle-numbers-value")
+    gravitationalConstantValue = document.getElementById("gravitational-constant-value");
+
+    for (let i = 0; i < sliderInputs.length; i++) {
+        sliders.push([sliderInputs[i], sliderValues[i]])
+    }
+}
