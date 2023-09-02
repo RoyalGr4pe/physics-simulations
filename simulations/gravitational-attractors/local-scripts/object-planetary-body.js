@@ -2,7 +2,7 @@ class PlanetaryBody {
     constructor(x, y, vx, vy, m, id) {
         this.id = id;
         this.mass = m;
-        this.radius = 6//sqrt(this.mass);
+        this.radius = Number(particleRadiusSlider.value);
         this.pos = createVector(x, y);
         this.vel = createVector(vx, vy);
         this.acc = createVector();
@@ -17,6 +17,7 @@ class PlanetaryBody {
 
 
     update(canvasWidth, canvasHeight) {
+        this.mass = Number(particleMassSlider.value) ** Number(particleMassPowerSlider.value);
         this.updateOrbitingBodies();
         this.updateAcceleration();
         this.updateVelocity();
@@ -43,7 +44,7 @@ class PlanetaryBody {
             let force = p5.Vector.sub(this.pos, object.pos);
             let distanceSqr = force.magSq();
             
-            let G = 6.674 * 10e-11//Number(gravitationalConstantSlider.value);
+            let G = Number(gravitationalConstantSlider.value) * 10**(Number(gravitationalConstantPowerSlider.value));//6.674 * 
             let strength = (G * this.mass * object.mass) / distanceSqr; 
             force.setMag(strength);
             

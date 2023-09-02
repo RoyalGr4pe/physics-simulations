@@ -36,11 +36,20 @@ function loadSettings() {
     speedSlider = document.getElementById("simulation-speed-range");
     numberOfParticlesSlider = document.getElementById("particle-numbers-range")
     gravitationalConstantSlider = document.getElementById("gravitational-constant-range");
+    gravitationalConstantPowerSlider = document.getElementById("gravitational-constant-power-range");
+    particleMassSlider = document.getElementById("particle-mass-range");
+    particleMassPowerSlider = document.getElementById("particle-mass-power-range");
+    particleRadiusSlider = document.getElementById("particle-radius-range");
 
     // Slider values
     speedSliderValue = document.getElementById("simulation-speed-value");
     numberOfParticlesValue = document.getElementById("particle-numbers-value")
     gravitationalConstantValue = document.getElementById("gravitational-constant-value");
+    gravitationalConstantPowerValue = document.getElementById("gravitational-constant-power-value");
+    particleMassValue = document.getElementById("particle-mass-value");
+    particleMassPowerValue = document.getElementById("particle-mass-power-value");
+    particleRadiusValue = document.getElementById("particle-radius-value");
+
 
     for (let i = 0; i < sliderInputs.length; i++) {
         sliders.push([sliderInputs[i], sliderValues[i]])

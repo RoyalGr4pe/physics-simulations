@@ -51,12 +51,32 @@
 
         <div class="slider-container">
           <label class="slider-label">Number of Particles: <span id="particle-numbers-value" class="slider-value"></span></label>
-          <input type="range" min="0" max="1000" value="50" class="slider" id="particle-numbers-range" step="1">
+          <input type="range" min="0" max="1000" value="450" class="slider" id="particle-numbers-range" step="1">
         </div>
 
         <div class="slider-container">
           <label class="slider-label">Gravitational Constant: <span id="gravitational-constant-value" class="slider-value"></span></label>
-          <input type="range" min="-100" max="100" value="0.01" class="slider" id="gravitational-constant-range" step="0.01">
+          <input type="range" min="-10" max="10" value="6.674" class="slider" id="gravitational-constant-range" step="0.001">
+        </div>
+
+        <div class="slider-container">
+          <label class="slider-label">Gravitational Constant Power: <span id="gravitational-constant-power-value" class="slider-value"></span></label>
+          <input type="range" min="-13" max="13" value="-11" class="slider" id="gravitational-constant-power-range" step="1">
+        </div>
+
+        <div class="slider-container">
+          <label class="slider-label">Particle Mass: <span id="particle-mass-value" class="slider-value"></span> kg</label>
+          <input type="range" min="-10" max="10" value="8" class="slider" id="particle-mass-range" step="0.1">
+        </div>
+
+        <div class="slider-container">
+          <label class="slider-label">Particle Mass Power: <span id="particle-mass-power-value" class="slider-value"></span></label>
+          <input type="range" min="-15" max="15" value="9" class="slider" id="particle-mass-power-range" step="1">
+        </div>
+
+        <div class="slider-container">
+          <label class="slider-label">Particle Radius: <span id="particle-radius-value" class="slider-value"></span></label>
+          <input type="range" min="0.01" max="20" value="6" class="slider" id="particle-radius-range" step="0.01">
         </div>
 
       </div>

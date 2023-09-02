@@ -8,7 +8,7 @@ function resetSketchEvent() {
     let maxYPos = simulationContainer.clientHeight;
     let minVel = -0.5;
     let maxVel = 0.5;
-    let mass = 20000000;
+    let mass = Number(particleMassSlider.value) ** Number(particleMassPowerSlider.value);
     let id = 1;
 
     for (let i = 0; i < Number(numberOfParticlesSlider.value); i++) {
