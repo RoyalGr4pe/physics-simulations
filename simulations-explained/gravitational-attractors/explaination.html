@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global-shared-styles/root.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-selectors-styles.css">
+    <link rel="stylesheet" href="/global-shared-styles/page-titles-styles.css">
+    <link rel="stylesheet" href="/simulations-explained/local-shared-styles/main-container-styles.css">
+    <link rel="stylesheet" href="/simulations-explained/local-shared-styles/explaination-block-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script type="text/javascript" src="/global-shared-scripts/global-constants.js"></script>
+    
+    <title>Gravitational Attractors Code</title>
+    <link rel="icon" type="image/x-icon" href="/global-shared-assets/images/icons/icon.ico">
+</head>
+<body>
+    <div class="main-container">
+        <div class="top-bar-container">
+            <a class="top-bar-button" href="/home/home.html">Home</a>
+            <a class="top-bar-button" href="/home/code.html" under-line-href="/simulations-explained/gravitational-attractors/explaination.html">Code</a>
+            <a class="top-bar-button" href="https://github.com/RoyalGr4pe/simulation-labs/tree/main/simulations/soft_body_spring_mass/scripts">Github</a>
+            <a class="top-bar-button" href="/home/settings.html">Settings</a>
+        </div>
+        <script type="text/javascript" src="/global-shared-scripts/global-page-change-event.js"></script>
+
+        <div class="title-container">
+            <h1 class="page-title">Gravitational Attractors</h1>
+            <p class="page-info-title">This simulation was programmed using p5.js and WebGL</p>
+        </div>
+        
+        <div class="code-blocks-container">
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    This is the p5.js setup function. Here we locate the simulation container and create a p5 canvas using the width and height of the container. The WebGL parameter inside the createCanvas function is used to tell p5 we want to use WebGL. At then end of this function we call resetSketchEvent() which causes the simulation to start. 
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    This is the p5.js draw function. This function gets called every frame. The deltaTime variable is the time between the last frame and now. Since p5 has its origin in the middle of the window we have to translate to the bottom left. The function updateAndRenderPlanetaryBodies
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    This script is responsible for resetting and initializing the simulation. It generates a specified number of particles and applies and random position and velocity.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>
+            <div class="code-block-container">
+                <p class="code-explaination">
+                    This class is designed to simulate the behavior of attractors, attracted to each other using Newton's Law of Universal Gravitation in a 2D space, including their motion, gravitational interactions, and collision handling with boundaries.
+                </p>
+                <div class="code-block"><pre><code></code></pre></div>
+            </div>        
+        </div>
+        <script type="text/javascript" src="/simulations-explained/local-shared-scripts/dynamic-functions.js"></script>
+        <link rel="stylesheet" href="/global-shared-styles/media-queries.css">
+</div>
+</body>
+</html>

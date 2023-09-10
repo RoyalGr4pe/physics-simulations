@@ -1,7 +1,7 @@
-function updatePlanetaryBodies() {
-    objectCollisionHandler(planetaryBodies);
-    for (body of planetaryBodies) {
-        body.update(simulationContainer.clientWidth, simulationContainer.clientHeight);
-        body.render()
+function updateAndRenderAttractors() {
+    objectCollisionHandler(attractors);
+    for (attractor of attractors) {
+        attractor.update(simulationContainer.clientWidth, simulationContainer.clientHeight);
+        attractor.render()
     }
 }

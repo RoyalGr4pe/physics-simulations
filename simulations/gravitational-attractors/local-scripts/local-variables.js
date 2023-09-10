@@ -7,12 +7,12 @@ let isMenuOpen = false;
 
 // Sliders
 let speedSlider;
-let numberOfParticlesSlider;
+let numberOfAttractorsSlider;
 let gravitationalConstantSlider;
 
 // Slider Values
 let speedSliderValue;
-let numberOfParticlesValue;
+let numberOfAttractorsValue;
 let gravitationalConstantValue;
 
 
@@ -29,26 +29,26 @@ const speedIncrease = 10;
 const coefficientOfRestitution = 0.01;
 const boundaryDampingCoefficient = 0.95;
 
-let planetaryBodies = [];
+let attractors = [];
 
 function loadSettings() {
     // Sliders
     speedSlider = document.getElementById("simulation-speed-range");
-    numberOfParticlesSlider = document.getElementById("particle-numbers-range")
+    numberOfAttractorsSlider = document.getElementById("attractor-numbers-range")
     gravitationalConstantSlider = document.getElementById("gravitational-constant-range");
     gravitationalConstantPowerSlider = document.getElementById("gravitational-constant-power-range");
-    particleMassSlider = document.getElementById("particle-mass-range");
-    particleMassPowerSlider = document.getElementById("particle-mass-power-range");
-    particleRadiusSlider = document.getElementById("particle-radius-range");
+    attractorMassSlider = document.getElementById("attractor-mass-range");
+    attractorMassPowerSlider = document.getElementById("attractor-mass-power-range");
+    attractorRadiusSlider = document.getElementById("attractor-radius-range");
 
     // Slider values
     speedSliderValue = document.getElementById("simulation-speed-value");
-    numberOfParticlesValue = document.getElementById("particle-numbers-value")
+    numberOfAttractorsValue = document.getElementById("attractor-numbers-value")
     gravitationalConstantValue = document.getElementById("gravitational-constant-value");
     gravitationalConstantPowerValue = document.getElementById("gravitational-constant-power-value");
-    particleMassValue = document.getElementById("particle-mass-value");
-    particleMassPowerValue = document.getElementById("particle-mass-power-value");
-    particleRadiusValue = document.getElementById("particle-radius-value");
+    attractorMassValue = document.getElementById("attractor-mass-value");
+    attractorMassPowerValue = document.getElementById("attractor-mass-power-value");
+    attractorRadiusValue = document.getElementById("attractor-radius-value");
 
 
     for (let i = 0; i < sliderInputs.length; i++) {

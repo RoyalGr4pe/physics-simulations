@@ -1,8 +1,8 @@
-class PlanetaryBody {
+class Attractor {
     constructor(x, y, vx, vy, m, id) {
         this.id = id;
         this.mass = m;
-        this.radius = Number(particleRadiusSlider.value);
+        this.radius = Number(attractorRadiusSlider.value);
         this.pos = createVector(x, y);
         this.vel = createVector(vx, vy);
         this.acc = createVector();
@@ -17,7 +17,7 @@ class PlanetaryBody {
 
 
     update(canvasWidth, canvasHeight) {
-        this.mass = Number(particleMassSlider.value) ** Number(particleMassPowerSlider.value);
+        this.mass = Number(attractorMassSlider.value) ** Number(attractorMassPowerSlider.value);
         this.updateOrbitingBodies();
         this.updateAcceleration();
         this.updateVelocity();
@@ -82,7 +82,7 @@ class PlanetaryBody {
 
 
     /*-------------------------------------------------------------------*/
-    /* Joint collisions                                                  */
+    /* Attractor collisions                                              */
     /*-------------------------------------------------------------------*/
 
 

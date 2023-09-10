@@ -1,15 +1,3 @@
-function setup() {
-    loadSimulationSharedElements();
-    loadSettings();
-
-    let canvas = createCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight, WEBGL);
-    canvas.parent(simulationContainer);
-    lastFrame = new Date().getTime();
-
-    resetSketchEvent();
-}
-
-
 function draw() {
     deltaTime =  speedIncrease * Number(speedSlider.value) * (new Date().getTime() - lastFrame) * 0.001;
     lastFrame = new Date().getTime();
@@ -22,11 +10,5 @@ function draw() {
 
     adjustSharedElementsSize();
     updateSliderInfo();  
-    updateAndRenderAttractors();  
-}
-
-
-// Resizes canvas when window size is changed
-function windowResized() {
-    resizeCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight);
+    updateAndRenderPlanetaryBodies();  
 }
