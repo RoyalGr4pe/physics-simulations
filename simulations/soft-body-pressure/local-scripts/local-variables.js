@@ -1,17 +1,13 @@
-let jointsGrid;
+let joints;
 let lastFrame;
 let deltaTime;
 let isMenuOpen = false;
+let volume;
 
-// One pixel should be 0.0001m in the program
-const pixelLength = 0.00026; // 0.00026m
-const centimetreConversion = 0.01;
-const pixelConversionConstant = centimetreConversion / pixelLength;
 
 // Sliders
 let springConstantSlider;
 let numberOfJointsSlider;
-let startingAngleSlider;
 let springLengthSlider;
 let jointMassSlider;
 let jointRadiusSlider;
@@ -22,7 +18,6 @@ let gravitySlider;
 // Slider values
 let springConstantSliderValue;
 let numberOfJointsSliderValue;
-let startingAngleSliderValue;
 let springLengthSliderValue;
 let jointMassSliderValue;
 let jointRadiusSliderValue;
@@ -31,15 +26,22 @@ let gravitySliderValue;
 
 // Constants
 const springWidth = 3;
-const boundaryDampingCoefficient = 0.95;
+const Pressure = -600;
+
+// One pixel should be 0.0001m in the program
+const pixelLength = 0.00026; // 0.00026m
+const centimetreConversion = 0.01;
+const pixelConversionConstant = centimetreConversion / pixelLength;
+
+const boundaryDampingCoefficient = 0.99;
 const springDampingCoefficient = 0.95;
-const coefficientOfRestitution = 0.95;
+const coefficientOfRestitution = 0.99;
+
 
 function loadSettings() {    
   // Sliders
   springConstantSlider = document.getElementById("spring-constant-range");
   numberOfJointsSlider = document.getElementById("number-of-joints-range");
-  startingAngleSlider = document.getElementById("starting-angle-range");
   springLengthSlider = document.getElementById("spring-length-range");
   jointMassSlider = document.getElementById("joints-mass-range");
   jointRadiusSlider = document.getElementById("joints-radius-range");
@@ -50,7 +52,6 @@ function loadSettings() {
   simulationSpeedSliderValue = document.getElementById("simulation-speed-value");
   springConstantSliderValue = document.getElementById("spring-constant-value");
   numberOfJointsSliderValue = document.getElementById("number-of-joints-value");
-  startingAngleSliderValue = document.getElementById("starting-angle-value");
   springLengthSliderValue = document.getElementById("spring-length-value");
   jointMassSliderValue = document.getElementById("joints-mass-value");
   jointRadiusSliderValue = document.getElementById("joints-radius-value");

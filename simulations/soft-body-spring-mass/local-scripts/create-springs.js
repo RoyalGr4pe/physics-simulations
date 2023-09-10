@@ -1,24 +1,3 @@
-function springAlreadyAttached(springs, joint1, joint2) {
-    for (spring of springs) {
-        if (
-            (
-                spring.getJointIDs()[0] == joint1.getID() 
-                && spring.getJointIDs()[1] == joint2.getID()
-            )
-            || 
-            (
-                spring.getJointIDs()[0] == joint2.getID() 
-                && spring.getJointIDs()[1] == joint1.getID()
-            )
-            ) 
-            {
-                return true;
-            }
-    }
-    return false;
-}
-
-
 function isValidJointIndex(jointsGrid, row, col) {
     return row >= 0 && row < jointsGrid.length && col >= 0 && col < jointsGrid[row].length;
 }

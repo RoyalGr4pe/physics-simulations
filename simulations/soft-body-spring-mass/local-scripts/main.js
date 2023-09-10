@@ -27,10 +27,6 @@ function draw() {
 }
 
 
-function windowResized() {
-  resizeCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight);
-}
-
 function renderJointsAndSprings() {
   // Render all the springs
   for (spring of springs) {

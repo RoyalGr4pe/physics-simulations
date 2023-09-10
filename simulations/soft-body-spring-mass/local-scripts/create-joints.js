@@ -5,7 +5,6 @@ function createJoints(numberOfJoints, springRestingLength, jointMass, jointRadiu
     If rows and columns can't be equal then rows should be larger then columns
     */
 
-
     let columns = Math.floor(Math.sqrt(numberOfJoints));
     while (numberOfJoints % columns != 0) {
         columns--;

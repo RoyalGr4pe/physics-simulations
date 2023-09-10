@@ -9,6 +9,7 @@ class Joint {
         this.forceDueToGravity = 0;
         this.resultantForce = [0, 0];
         this.springForce = [0, 0];
+        this.pressureForce = [0, 0];
         this.springs = [];
     }
 
@@ -26,6 +27,7 @@ class Joint {
         this.updatePosition();
         this.boundaryCollisionHandler(0, canvasWidth, 0, canvasHeight);
         this.springForce = [0, 0];
+        this.pressureForce = [0, 0];
     }
     
     
@@ -53,8 +55,9 @@ class Joint {
 
 
     updateForce() {
-        this.resultantForce[0] = this.springForce[0];
-        this.resultantForce[1] = this.springForce[1] + this.forceDueToGravity;
+        console.log(this.pressureForce, this.springForce)
+        this.resultantForce[0] = this.springForce[0] + this.pressureForce[0];
+        this.resultantForce[1] = this.springForce[1] + this.pressureForce[0] + this.forceDueToGravity;
         if (this.resultantForce[0] == NaN) {
             this.resultantForce[0] = 0;
         }
@@ -208,6 +211,11 @@ class Joint {
 
     setMass(newMass) {
         this.mass = newMass;
+    }
+
+    setForce(force) {
+        this.pressureForce[0] += force[0];
+        this.pressureForce[1] += force[1];
     }
 
 

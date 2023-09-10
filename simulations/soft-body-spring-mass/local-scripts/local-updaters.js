@@ -13,4 +13,3 @@ function updateJointsAndSprings() {
     spring.update();
   }
 }
-  

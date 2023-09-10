@@ -7,6 +7,8 @@ class Spring {
         this.position = position;
         this.springForce = [0, 0];
         this.jointIDs = jointIDs;
+        this.nx = 0;
+        this.ny = 0;
     }
 
     /*-------------------------------------------------------------------*/
@@ -82,6 +84,16 @@ class Spring {
     }
 
 
+    getNX() {
+        return this.nx;
+    }
+
+
+    getNY() {
+        return this.ny;
+    }
+
+
     /*-------------------------------------------------------------------*/
     /* Setters                                                           */
     /*-------------------------------------------------------------------*/
@@ -89,6 +101,12 @@ class Spring {
 
     setSpringConstant(newSpringConstant) {
         this.k = newSpringConstant;
+    }
+
+
+    setNormalVectors(nx, ny) {
+        this.nx = nx;
+        this.ny = ny;
     }
 
 

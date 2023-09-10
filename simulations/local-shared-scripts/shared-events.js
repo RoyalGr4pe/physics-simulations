@@ -3,6 +3,12 @@ function goToHomeEvent() {
     window.location.href = "/home/home.html"; 
 }
 
+
+function windowResized() {
+  resizeCanvas(simulationContainer.clientWidth, simulationContainer.clientHeight);
+}
+
+
 function toggleMenuButtonEvent() {
   // If window width can have both menu bar and canvas
   if (windowWidth >= minWindowWidth) {
